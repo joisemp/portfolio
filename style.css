@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Fredoka+One&family=Josefin+Sans:ital,wght@0,400;1,300&family=Pacifico&family=Poppins:wght@400;600&family=Sniglet&family=Titan+One&display=swap');
+p {
+    font-family: Sniglet;
+}
+
+
+/*Navbar*/
+
+.navbar {
+    padding: 1rem!important;
+}
+
+.navbar-light .navbar-brand {
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: bolder;
+}
+
+.nav-item {
+    align-items: center;
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 0 31px 0 14px;
+}
+
+.navbar-brand {
+    font-family: Fredoka One;
+    font-size: 24px;
+}
+
+@media (min-width: 576px) {
+    .navbar-expand-sm .navbar-collapse {
+        display: flex!important;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+        margin: 0 0 0 0px;
+    }
+    .navbar-expand-sm .navbar-nav {
+        -ms-flex-direction: row;
+        flex-direction: row;
+        margin: 0 -22px 0 0;
+    }
+    .navbar .navbar-nav li {
+        color: rgb(0, 0, 0) !important;
+        font-family: Josefin Sans;
+    }
+    .navbar .navbar-nav li :hover {
+        color: rgb(255, 255, 255) !important;
+        background: #14213D;
+        border-radius: 5px;
+        font-weight: 3rem;
+    }
+}
+
+@media screen and (max-width: 574px) {
+    .nav-item {
+        padding: 0 0 0 0;
+        text-align: center;
+        width: 100%;
+        margin: 3% 0 0 0;
+    }
+    .navbar .navbar-nav li {
+        color: rgb(0, 0, 0) !important;
+        font-family: Josefin Sans;
+    }
+    .navbar .navbar-nav li :hover {
+        color: rgb(255, 255, 255) !important;
+        background: #14213D;
+        font-weight: 3rem;
+    }
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
