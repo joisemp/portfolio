@@ -88,6 +88,7 @@ p {
     }
     .navbar .navbar-nav li {
         color: #343a40 !important;
+        width: 150px !important;
         font-family: Josefin Sans;
     }
     .navbar .navbar-nav li :hover {
