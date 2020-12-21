@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Fredoka+One&family=Josefin+Sans:ital,wght@0,400;1,300&family=Pacifico&family=Poppins:wght@400;600&family=Sniglet&family=Titan+One&display=swap');
 p {
     font-family: Sniglet;
+    font-size: 16px;
 }
 
 
@@ -28,13 +29,13 @@ p {
 
 @keyframes loader {
     0% {
-        color: red;
+        color: #000000;
     }
     50% {
-        color: blue;
+        color: rgb(0, 0, 0);
     }
     100% {
-        color: red;
+        color: #000000;
     }
 }
 
@@ -135,27 +136,33 @@ p {
 }
 
 @media (min-width: 768px) {
+    .about-text {
+        position: relative;
+    }
     .intro {
-        padding: 8rem 0 7rem 0;
+        width: 80%;
+        height: 100px;
+        padding: 20px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        margin: -70px 0 0 -170px;
         text-align: center;
     }
     .profile-pic {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 90%;
+        width: 80%;
     }
     .about h4 {
         font-family: Sniglet;
-    }
-    p {
-        font-size: 16px;
     }
 }
 
 @media (max-width: 767px) {
     .intro {
-        padding: 2rem 0 7rem 0;
+        padding: 2rem 0 1rem 0;
         text-align: center;
     }
     .profile-pic {
@@ -166,8 +173,5 @@ p {
     }
     .about h4 {
         font-family: Sniglet;
-    }
-    p {
-        font-size: 16px;
     }
 }
