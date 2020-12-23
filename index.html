@@ -53,12 +53,38 @@
             </div>
         </nav>
     </header>
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="close-btn" onclick="togglePopup()">&times;</div>
+            <h3 style="text-align: center; padding-bottom: 1rem;"><u>Contact Me</u></h3>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputName4">Name</label>
+                        <input type="text" name="Name" class="form-control" id="inputName4" placeholder="Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" name="Email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Message</label>
+                    <textarea class="form-control" name="Message" name="" id="inputComment" cols="30" rows="10" placeholder="Type your message here.."></textarea>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-block btn-outline-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <div>
-        <button class="btn message"><img src="Assets/images/Message.svg" alt=""></button>
+        <button onclick="togglePopup()" class="btn message shadow-none"><img src="Assets/images/Message.svg" alt=""></button>
     </div>
     <!--About section-->
 
-    <section data-aos="fade-up" data-aos-duration="10000" class="about">
+    <section data-aos="fade-up" class="about">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-6">
@@ -79,10 +105,12 @@
     </section>
     <section id=""></section>
 
-
+    <script src="Assets/Javascript/popup.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 1200
+        });
     </script>
     <script src="Assets/Javascript/preloader.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
