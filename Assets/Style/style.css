@@ -4,6 +4,10 @@
         font-size: 16px;
     }
     
+    .link {
+        color: rgb(67, 67, 255);
+    }
+    
     @media (min-width: 768px) {
         .popup .overlay {
             position: fixed;
