@@ -19,8 +19,9 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top shadow p-3 mb-5 bg-white">
-            <a class="navbar-brand h1" href="#">JOISE MP</a>
+
+        <nav class="navbar navbar-expand-sm navbar-light bg-light shadow fixed-top p-3 mb-5 bg-white">
+            <a class="navbar-brand h1" href="index.html">JOISE MP</a>
             <!--
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <img src="Assets/images/toogle.svg" alt="">
@@ -50,10 +51,11 @@
                         </a>
                     </li>
                 </ul>
-                -->
-            </div>
+
+            </div> -->
             </div>
         </nav>
+
     </header>
     <div class="popup fixed-top" id="popup-1">
         <div class="overlay"></div>
@@ -63,20 +65,20 @@
                 <h3 style="text-align: center; padding-bottom: 1rem;">Contact Me
                 </h3>
             </div>
-            <form class="mt-3">
+            <form method="POST" action="https://script.google.com/macros/s/AKfycbyCneq_GR21RQLgcy0mSeCFvBW3VUhtULRt6bw02g/exec" class="mt-3">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputName4">Name</label>
-                        <input type="text" name="Name" class="form-control" id="inputName4" placeholder="Name">
+                        <input type="text" name="name" class="form-control" id="inputName4" placeholder="Name">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Email</label>
-                        <input type="email" name="Email" class="form-control" id="inputEmail4" placeholder="Email">
+                        <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputAddress">Message</label>
-                    <textarea class="form-control" name="Message" name="" id="inputComment" cols="30" rows="10" placeholder="Type your message here.."></textarea>
+                    <textarea class="form-control" name="message" name="" id="inputComment" cols="30" rows="10" placeholder="Type your message here.."></textarea>
                 </div>
                 <div class="form-group text-center">
                     <button type="submit" class="btn btn-block btn-outline-primary">Submit</button>
@@ -93,28 +95,30 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-6">
-                    <img data-aos="fade" class="profile-pic rounded-circle pt-4" src="https://scontent.fcok2-1.fna.fbcdn.net/v/t1.0-9/123395271_781107996076456_8807682581686665033_o.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=orZzh4J7e_EAX_bywOD&_nc_ht=scontent.fcok2-1.fna&oh=dd8cf5ce5a3ec7a9a1d7367bba29cbf8&oe=5FFE41C2 "
+                    <img data-aos="fade" class="profile-pic rounded-circle pt-4" src="https://scontent.fcok2-1.fna.fbcdn.net/v/t1.0-9/123395271_781107996076456_8807682581686665033_o.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=4OHacyjr8qAAX9-iuaX&_nc_ht=scontent.fcok2-1.fna&oh=8b9e8b5d2cf498b817670f66b66b6900&oe=6029C342"
                         alt="Joise MP ">
                 </div>
                 <div class="col-sm-12 col-md-6 about-text">
                     <div class="intro">
                         <h4>Hi I am JOISE MP</h4>
                         <hr>
-                        <p>I am a Freelance UI/UX Designer as well as a Web Designer currently based in India.</p>
+                        <p>I am a UI/UX Designer as well as a Web Designer currently based in India.</p>
                         <p>For work, schedule it on <a class=".link" target="blank" href="https://www.fiverr.com/share/LveoNQ">Fiverr</a> or <a class=".link" onclick="togglePopup()">contact me</a>
                         </p>
                         <div class="col-md-12">
                             <a class="col-md-3" target="blank" href="https://github.com/joisemp"><img src="Assets/images/Icon awesome-github.svg" alt="Github" width="20px"></a>
                             <a class="col-md-3" target="blank" href="https://www.linkedin.com/in/joisemp/"><img src="Assets/images/Icon awesome-linkedin.svg" alt="Linkedin" width="20px"></a>
                             <a class="col-md-3" target="blank" href="https://www.instagram.com/joise_mp/"><img src="Assets/images/Icon simple-instagram.svg" alt="Instagram" width="20px"></a>
-                            <a class="col-md-3" target="blank" href="https://www.facebook.com/joisempfb"><img src="Assets/images/Icon awesome-facebook-square.svg" alt="Facebook" width="20px"></a>
+                            <a class="col-md-3" target="blank" href="https://www.facebook.com/joise.mp"><img src="Assets/images/Icon awesome-facebook-square.svg" alt="Facebook" width="20px"></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id=""></section>
+    <section class="maintainance-message text-center mt-3 p-2 mb-5">
+        <h4>Sorry the other parts of this website is under maintainance</h4>
+    </section>
 
     <script src="Assets/Javascript/popup.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
