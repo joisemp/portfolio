@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Fredoka+One&family=Josefin+Sans:ital,wght@0,400;1,300&family=Pacifico&family=Poppins:wght@400;600&family=Sniglet&family=Titan+One&display=swap');
+p {
+    font-family: Sniglet;
+    font-size: 16px;
+}
+
+.link {
+    color: rgb(67, 67, 255);
+}
+
+@media (min-width: 768px) {
+    .popup .overlay {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+        display: none;
+    }
+    .popup .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: 325px 0 0 0;
+        transform: translate(-50%, -50%) scale(0);
+        background: #fff;
+        width: 760px;
+        z-index: 2;
+        padding: 20px 20px 5px 20px;
+        box-sizing: border-box;
+        font-family: Sniglet;
+        border-radius: 5px;
+    }
+    .popup .back-btn {
+        cursor: pointer;
+        position: absolute;
+    }
+    .popup.active .overlay {
+        display: block;
+    }
+    .popup.active .content {
+        transition: all 300ms ease-in-out;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    .heading {
+        background: blueviolet;
+        border-radius: 10px;
+        padding: 13px 2px 0 2px;
+        color: white;
+    }
+    .message {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 50%;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 1;
+        background: blueviolet;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .popup .overlay {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+        display: none;
+    }
+    .popup .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        margin: 319px 0 0 0;
+        background: #fff;
+        width: 100%;
+        z-index: 2;
+        padding: 50px 25px 25px 25px;
+        box-sizing: border-box;
+        font-family: Sniglet;
+    }
+    .popup .back-btn {
+        cursor: pointer;
+        position: absolute;
+    }
+    .popup.active .overlay {
+        display: block;
+    }
+    .popup.active .content {
+        transition: all 300ms ease-in-out;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    .heading {
+        background: blueviolet;
+        border-radius: 10px;
+        padding: 13px 2px 0 2px;
+        color: white;
+    }
+    .message {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 50%;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 1;
+        background: blueviolet;
+    }
+}
+/* Preloader */
+
+.loader_bg {
+    position: fixed;
+    z-index: 99999;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    transition: opacity 3s ease;
+}
+
+.loader {
+    width: 200px;
+    height: 200px;
+    font-family: Fredoka One;
+    position: relative;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+    animation: loader 5s linear infinite;
+    transition: 2s ease;
+}
+
+@keyframes loader {
+    0% {
+        color: #000000;
+    }
+    50% {
+        color: rgb(0, 0, 0);
+    }
+    100% {
+        color: #000000;
+    }
+}
+
+.preload-finish {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.preload-finish1 {
+    opacity: 0;
+    pointer-events: none;
+}
+/*Navbar*/
+
+.navbar {
+    padding: 1rem!important;
+}
+
+.navbar-light .navbar-brand {
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: bolder;
+}
+
+.nav-item {
+    align-items: center;
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 0 31px 0 14px;
+}
+
+.navbar-brand {
+    font-family: Fredoka One;
+    font-size: 24px;
+}
+
+@media (min-width: 576px) {
+    .navbar-expand-sm .navbar-collapse {
+        display: flex!important;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+        margin: 0 0 0 0px;
+    }
+    .navbar-expand-sm .navbar-nav {
+        -ms-flex-direction: row;
+        flex-direction: row;
+        margin: 0 -22px 0 0;
+    }
+    .navbar .navbar-nav li {
+        color: #343a40 !important;
+        width: 150px !important;
+        font-family: Josefin Sans;
+    }
+    .navbar .navbar-nav li :hover {
+        color: rgb(255, 255, 255) !important;
+        background: #343a40;
+        border-radius: 5px;
+        font-weight: 3rem;
+    }
+}
+
+@media screen and (max-width: 574px) {
+    .nav-item {
+        padding: 0 0 0 0;
+        text-align: center;
+        width: 100%;
+        margin: 3% 0 0 0;
+    }
+    .navbar .navbar-nav li {
+        color: #343a40 !important;
+        font-family: Josefin Sans;
+    }
+    .navbar .navbar-nav li :hover {
+        color: rgb(255, 255, 255) !important;
+        background: #343a40;
+        font-weight: 3rem;
+    }
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+/* About Section */
+
+.about {
+    margin: 79px 0 0 0;
+    padding: 40px 0 50px 0;
+}
+
+@media (min-width: 768px) {
+    .about-text {
+        position: relative;
+    }
+    .intro {
+        width: 80%;
+        height: 100px;
+        padding: 20px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        margin: -70px 0 0 -170px;
+        text-align: center;
+    }
+    .profile-pic {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+    .about h4 {
+        font-family: Sniglet;
+    }
+}
+
+@media (max-width: 767px) {
+    .intro {
+        padding: 2rem 0 1rem 0;
+        text-align: center;
+    }
+    .profile-pic {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+    .about h4 {
+        font-family: Sniglet;
+    }
+}
