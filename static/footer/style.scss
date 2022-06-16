@@ -1,0 +1,36 @@
+$base-color: #fe4646;
+
+.footer {
+    background-color: rgb(17, 25, 40) !important;
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: rgb(255, 255, 255);
+    background: $base-color;
+}
+
+::selection {
+    color: rgb(255, 255, 255);
+    background: $base-color;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
