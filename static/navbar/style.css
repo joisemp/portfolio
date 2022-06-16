@@ -1,0 +1,43 @@
+body {
+  background-color: #000000;
+}
+
+.navbar-expand-lg {
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  background-color: rgba(15, 15, 15, 0.75) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.125) !important;
+}
+
+.navbar-expand-lg .navbar-brand {
+  font-family: "My Soul", cursive;
+  font-weight: bold;
+  color: #fe4646;
+  font-size: 30px;
+}
+
+.navbar-expand-lg .navbar-toggler {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.788);
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.527);
+  padding: 10px 30px 10px 30px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 0 35px 0 35px;
+  text-align: center;
+  color: white;
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 20px 0 20px 0;
+  }
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+  color: #fe4646;
+}
+/*# sourceMappingURL=style.css.map */
