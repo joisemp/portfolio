@@ -9,150 +9,92 @@
   background-color: rgba(0, 5, 14, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.125);
   border-radius: 10px;
-  padding: 10vh 1rem 20vh 1rem;
+  padding: 10vh 1rem 10vh 1rem;
 }
 
-#about .wrapper .mouse_scroll {
-  display: block;
-  margin: 0 auto;
-  width: 24px;
-  height: 0;
+#about .wrapper .icons {
+  font-size: 1.5rem;
+}
+
+#about .wrapper .icons a {
+  color: #ffff !important;
+}
+
+#about .wrapper .icons a:hover {
+  color: #fe4646 !important;
+}
+
+#about .wrapper #scroll {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 2rem;
 }
 
-#about .wrapper .m_scroll_arrows {
-  display: block;
-  width: 5px;
-  height: 5px;
-  /* IE 9 */
-  -webkit-transform: rotate(45deg);
-  /* Chrome, Safari, Opera */
-  transform: rotate(45deg);
-  border-right: 2px solid white;
-  border-bottom: 2px solid white;
-  margin: 0 0 3px 4px;
-  width: 16px;
-  height: 16px;
+@media only screen and (min-width: 600px) {
+  #about .wrapper #scroll {
+    margin-top: 4rem;
+  }
 }
 
-#about .wrapper .one {
-  margin-top: 1px;
-}
-
-#about .wrapper .one,
-#about .wrapper .two,
-#about .wrapper .three {
-  -webkit-animation: mouse-scroll 1s infinite;
-  animation: mouse-scroll 1s infinite;
-}
-
-#about .wrapper .one {
-  -webkit-animation-delay: 0.1s;
-  -moz-animation-delay: 0.1s;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
-  -webkit-animation-delay: alternate;
-          animation-delay: alternate;
-}
-
-#about .wrapper .two {
-  -webkit-animation-delay: 0.2s;
-  -moz-animation-delay: 0.2s;
-  -webkit-animation-direction: alternate;
-  animation-delay: 0.2s;
-  animation-direction: alternate;
-  margin-top: -6px;
-}
-
-#about .wrapper .three {
-  -webkit-animation-delay: 0.3s;
-  -moz-animation-delay: 0.3s;
-  -webkit-animation-direction: alternate;
-  animation-delay: 0.3s;
-  animation-direction: alternate;
-  margin-top: -6px;
-}
-
-#about .wrapper .mouse {
-  height: 42px;
-  width: 24px;
-  border-radius: 14px;
-  -webkit-transform: none;
-          transform: none;
-  border: 2px solid white;
-  top: 170px;
-}
-
-#about .wrapper .wheel {
-  height: 5px;
-  width: 2px;
-  display: block;
-  margin: 5px auto;
-  background: white;
+#about .wrapper #scroll .scroll {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.459);
+  border-radius: 50%;
   position: relative;
-  height: 4px;
-  width: 4px;
-  border: 2px solid #fff;
-  border-radius: 8px;
+  animation: down 1.5s infinite;
+  -webkit-animation: down 1.5s infinite;
 }
 
-#about .wrapper .wheel {
-  -webkit-animation: mouse-wheel 0.6s linear infinite;
-  animation: mouse-wheel 0.6s linear infinite;
+#about .wrapper #scroll .scroll::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12.5px;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid rgba(255, 255, 255, 0.459);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.459);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
-@-webkit-keyframes mouse-wheel {
+@-webkit-keyframes down {
   0% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+    -webkit-transform: translate(0);
+            transform: translate(0);
   }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(6px);
-    transform: translateY(6px);
+  20% {
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
   }
-}
-
-@keyframes mouse-wheel {
-  0% {
-    top: 1px;
-  }
-  25% {
-    top: 2px;
-  }
-  50% {
-    top: 3px;
-  }
-  75% {
-    top: 2px;
-  }
-  100% {
-    top: 1px;
+  40% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
   }
 }
 
-@-webkit-keyframes mouse-scroll {
+@keyframes down {
   0% {
-    opacity: 0;
+    -webkit-transform: translate(0);
+            transform: translate(0);
   }
-  50% {
-    opacity: 0.5;
+  20% {
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
   }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes mouse-scroll {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
+  40% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
   }
 }
 
@@ -288,7 +230,7 @@
 
 @media only screen and (min-width: 600px) {
   #about .wrapper {
-    padding: 15vh 2rem 20vh 0;
+    padding: 15vh 0 12vh 0;
   }
 }
 
