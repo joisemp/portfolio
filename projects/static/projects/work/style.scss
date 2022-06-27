@@ -5,12 +5,12 @@ $base-color: #fe4646;
 // About Style
 
 #about {
-    padding: 15vh 0 0 0;
+    padding: 15vh 0 5vh 0;
     .wrapper {
-        backdrop-filter: blur(16px) saturate(180%) !important;
-        -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-        background-color: rgba(8, 8, 8, 0.75) !important;
-        border: 1px solid rgba(255, 255, 255, 0.125) !important;
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(0, 5, 14, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.125);
         border-radius: 10px;
         padding: 10vh 1rem 20vh 1rem;
 
@@ -236,7 +236,21 @@ $base-color: #fe4646;
 // Project Style
 
 #projects {
-    padding: 0 0 4rem 0;
+    a:link {
+        text-decoration: none;
+    }
+
+    a:visited {
+        text-decoration: none;
+    }
+
+    a:hover {
+        .text {
+            h2 {
+                color: $base-color;
+            }
+        }
+    }
     margin-top: 3rem;
     display: flex;
     justify-content: center;
@@ -248,7 +262,9 @@ $base-color: #fe4646;
     background-color: rgba(0, 0, 0, 0.75);
     .wrap {
         width: 100%;
+        max-width: 800px;
         border-radius: 10px;
+        margin-bottom: 3rem;
     }
     .figure {
         display: flex;
@@ -263,7 +279,7 @@ $base-color: #fe4646;
         }
     }
     .text-wrap {
-        margin-top: 1rem;
+        margin: 1rem 0 0 0;
         .text {
             h2 {
                 font-weight: bold;
@@ -286,9 +302,4 @@ $base-color: #fe4646;
             }
         }
     }
-    @media only screen and (min-width: 600px) {
-        padding: 4rem 0;
-    }
 }
-
-

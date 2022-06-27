@@ -28,18 +28,20 @@
     
     {% if programming_projects %}
         {% for project in programming_projects %}
-        <div class="wrap animate__animated animate__fadeIn animate__delay-1s mt-4">
-            <figure class="figure">
-                <img src="{{ project.image.url }}"
-                    class="figure-img img-fluid rounded shadow" alt="...">
-            </figure>
-            <div class="text-wrap">
-                <div class="text">
-                    <h2 class="text-center">{{project.title}}</h2>
-                    <p class="text-center">{{project.company}} - {{project.year}}</p>
+            <a href="#">
+                <div class="wrap animate__animated animate__fadeIn animate__delay-1s">
+                    <figure class="figure">
+                        <img src="{{ project.image.url }}"
+                            class="figure-img img-fluid rounded shadow" alt="...">
+                    </figure>
+                    <div class="text-wrap">
+                        <div class="text">
+                            <h2 class="text-center">{{project.title}}</h2>
+                            <p class="text-center">{{project.company}} - {{project.year}}</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </a>
         {% endfor %}
     {% endif %}
 

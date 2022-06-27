@@ -7,5 +7,5 @@ class WorkPageView(generic.TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super(WorkPageView, self).get_context_data(**kwargs)
-        context['programming_projects'] = models.ProgrammingProject.objects.all().order_by('-id')
+        context['programming_projects'] = models.ProgrammingProject.objects.all().order_by('-year')
         return context
