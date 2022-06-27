@@ -8,6 +8,8 @@ from io import BytesIO
 
 class ProgrammingProject(models.Model):
     title = models.CharField(max_length=200)
+    company = models.CharField(max_length=200)
+    year = models.CharField(max_length=200)
     image = models.ImageField(upload_to='images/programming_projects/')
     summary = models.TextField(null=True, blank=True)
     link = models.CharField(null=True, blank=True, max_length=300)
