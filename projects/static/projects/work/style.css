@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap&family=My+Soul&display=swap");
 #about {
-  padding: 15vh 0 0 0;
+  padding: 15vh 0 5vh 0;
 }
 
 #about .wrapper {
-  backdrop-filter: blur(16px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-  background-color: rgba(8, 8, 8, 0.75) !important;
-  border: 1px solid rgba(255, 255, 255, 0.125) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(0, 5, 14, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.125);
   border-radius: 10px;
   padding: 10vh 1rem 20vh 1rem;
 }
@@ -293,7 +293,6 @@
 }
 
 #projects {
-  padding: 0 0 4rem 0;
   margin-top: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -314,9 +313,23 @@
   background-color: rgba(0, 0, 0, 0.75);
 }
 
+#projects a:link {
+  text-decoration: none;
+}
+
+#projects a:visited {
+  text-decoration: none;
+}
+
+#projects a:hover .text h2 {
+  color: #fe4646;
+}
+
 #projects .wrap {
   width: 100%;
+  max-width: 800px;
   border-radius: 10px;
+  margin-bottom: 3rem;
 }
 
 #projects .figure {
@@ -339,7 +352,7 @@
 }
 
 #projects .text-wrap {
-  margin-top: 1rem;
+  margin: 1rem 0 0 0;
 }
 
 #projects .text-wrap .text h2 {
@@ -361,12 +374,6 @@
   }
   #projects .text-wrap .text p {
     font-size: 1.125rem;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  #projects {
-    padding: 4rem 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
