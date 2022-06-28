@@ -5,6 +5,7 @@
     {% load static %}
     {% url 'projects:work-page' as workPage %}
     {% url 'projects:about-page' as aboutPage %}
+    {% url 'projects:contact-page' as contactPage %}
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,6 +26,8 @@
     <link rel="stylesheet" href="{% static 'projects/work/style.css' %}">
     {% elif request.path == aboutPage %}
     <link rel="stylesheet" href="{% static 'projects/about/style.css' %}">
+    {% elif request.path == contactPage %}
+    <link rel="stylesheet" href="{% static 'projects/contact/style.css' %}">
     {% endif %}
 
     <!-- font-awesome cdn -->

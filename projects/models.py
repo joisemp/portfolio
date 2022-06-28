@@ -1,3 +1,4 @@
+from email import message
 from turtle import title
 from django.db import models
 import sys
@@ -35,3 +36,14 @@ class ProgrammingProject(models.Model):
     
     def __str__(self):
         return(self.title)
+    
+
+class Contact(models.Model):
+    date = models.DateTimeField(auto_now_add=True)
+    full_name = models.CharField(max_length=300)
+    email_id = models.CharField(max_length=300)
+    subject = models.CharField(max_length=300)
+    message = models.TextField()
+    
+    def __str__(self):
+        return str(self.full_name)
