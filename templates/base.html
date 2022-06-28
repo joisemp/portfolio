@@ -6,6 +6,7 @@
     {% url 'projects:work-page' as workPage %}
     {% url 'projects:about-page' as aboutPage %}
     {% url 'projects:contact-page' as contactPage %}
+    {% url 'projects:programming-project-detail-page' object.pk as programmingProjectDetail %}
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,10 +29,12 @@
     <link rel="stylesheet" href="{% static 'projects/about/style.css' %}">
     {% elif request.path == contactPage %}
     <link rel="stylesheet" href="{% static 'projects/contact/style.css' %}">
+    {% elif request.path == programmingProjectDetail %}
+    <link rel="stylesheet" href="{% static 'projects/programming_project_detail/style.css' %}">
     {% endif %}
 
-    <!-- font-awesome cdn -->
-    <script src="https://kit.fontawesome.com/d2ef0bf498.js" crossorigin="anonymous"></script>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
 
     <link rel="icon" type="image/x-icon" href="{% static 'projects/work/icon.svg' %}">
 </head>
@@ -45,6 +48,8 @@
 
 
     <script src="{% static 'base/js/bootstrap.js' %}" ></script>
+    <script src="{% static 'fontawesome/js/all.js' %}" ></script>
+
 </body>
 
 </html>

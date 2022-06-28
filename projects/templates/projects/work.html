@@ -32,8 +32,8 @@
 
     {% if programming_projects %}
     {% for project in programming_projects %}
-    <a href="#">
-        <div class="wrap animate__animated animate__fadeIn animate__delay-1s">
+    <a href="{% url 'projects:programming-project-detail-page' project.pk %}">
+        <div class="wrap animate__animated animate__fadeIn">
             <figure class="figure">
                 <img src="{{ project.image.url }}" class="figure-img img-fluid rounded shadow" alt="...">
             </figure>
