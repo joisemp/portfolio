@@ -1,0 +1,41 @@
+$base-color: #fe4646;
+
+#contact {
+    padding: 20vh 0 10vh 0;
+    @media only screen and (max-width: 767px) {
+        padding-top: 15vh;
+    }
+    .btn-danger {
+        padding: 1rem 0.75rem !important;
+        font-weight: 400;
+    }
+    .text {
+        color: #ffff;
+        text-align: justify;
+        font-size: 1.22rem;
+        line-height: 2rem;
+        font-weight: 400;
+        backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(24, 24, 24, 0.75);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        margin: 20% 0;
+        padding: 3.4rem 0.5rem 1.1rem 0.5rem;
+        @media only screen and (max-width: 767px) {
+            font-size: 1.11rem;
+            margin-top: 2rem;
+        }
+        @media only screen and (min-width: 1400px) {
+            margin: 20% 5rem;
+        }
+        .icons {
+            font-size: 1.5rem;
+            a {
+                color: #ffff !important;
+                &:hover {
+                    color: $base-color !important;
+                }
+            }
+        }
+    }
+}
