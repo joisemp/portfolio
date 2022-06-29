@@ -1,42 +1,44 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block style %}
+    <link rel="stylesheet"
+          href="{% static 'projects/programming_project_detail/style.css' %}">
+{% endblock style %}
 {% block content %}
-
-<section id="project">
-    <div class="container animate__animated animate__fadeIn">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <img src="{{object.image.url}}"
-                    alt="">
-            </div>
-            <div class="col-12 col-md-6">
-                <div class="text">
-                    <h1 class="mt-4">{{object.title}}</h1>
-                    <span class="sub-text">{{object.company}} - {{object.year}}</span>
-                    <div class="btn-wrap mt-4 mb-4">
-                        <a href="https://{{object.link}}" target="_blank"><button class="btn"><i class="fa-solid fa-arrow-up-right-from-square pe-2"></i>Know
-                            more</button></a>
-                    </div>
-                    <p>
-                        {{object.summary}}
-                    </p>
-                    <hr class="text-light">
-                    <h4 class="mt-4">Tools and technologies</h4>
-                    <div class="tags mt-3">
-                        <span class="badge rounded-pill python"><i class="fa-brands fa-python pe-2"></i>Python</span>
-                        <span class="badge rounded-pill bootstrap"><i
-                                class="fa-brands fa-bootstrap pe-2"></i>Bootstrap</span>
-                        <span class="badge rounded-pill figma"><i class="fa-brands fa-figma pe-2"></i>Figma</span>
-                        <span class="badge rounded-pill html"><i class="fa-brands fa-html5 pe-2"></i>HTML</span>
-                        <span class="badge rounded-pill js"><i class="fa-brands fa-js pe-2"></i>Javascript</span>
-                        <span class="badge rounded-pill react"><i class="fa-brands fa-react pe-2"></i>React</span>
-                        <span class="badge rounded-pill sass"><i class="fa-brands fa-sass pe-2"></i>SCSS</span>
-                        <span class="badge rounded-pill github"><i class="fa-brands fa-github pe-2"></i>Github</span>
+    <section id="project">
+        <div class="container animate__animated animate__fadeIn">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <img src="{{ object.image.url }}" alt="">
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="text">
+                        <h1 class="mt-4">{{ object.title }}</h1>
+                        <span class="sub-text">{{ object.company }} - {{ object.year }}</span>
+                        <div class="btn-wrap mt-4 mb-4">
+                            <a href="https://{{ object.link }}" target="_blank">
+                                <button class="btn">
+                                    <i class="fa-solid fa-arrow-up-right-from-square pe-2"></i>Know
+                                    more
+                                </button>
+                            </a>
+                        </div>
+                        <p>{{ object.summary }}</p>
+                        <hr class="text-light">
+                        <h4 class="mt-4">Tools and technologies</h4>
+                        <div class="tags mt-3">
+                            <span class="badge rounded-pill python"><i class="fa-brands fa-python pe-2"></i>Python</span>
+                            <span class="badge rounded-pill bootstrap"><i class="fa-brands fa-bootstrap pe-2"></i>Bootstrap</span>
+                            <span class="badge rounded-pill figma"><i class="fa-brands fa-figma pe-2"></i>Figma</span>
+                            <span class="badge rounded-pill html"><i class="fa-brands fa-html5 pe-2"></i>HTML</span>
+                            <span class="badge rounded-pill js"><i class="fa-brands fa-js pe-2"></i>Javascript</span>
+                            <span class="badge rounded-pill react"><i class="fa-brands fa-react pe-2"></i>React</span>
+                            <span class="badge rounded-pill sass"><i class="fa-brands fa-sass pe-2"></i>SCSS</span>
+                            <span class="badge rounded-pill github"><i class="fa-brands fa-github pe-2"></i>Github</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 {% endblock content %}

@@ -1,53 +1,75 @@
 {% extends 'base.html' %}
-
-{% block title %} | Work{% endblock title %}
+{% load static %}
+{% block title %}
+    | Work
+{% endblock title %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'projects/work/style.css' %}">
+{% endblock style %}
 {% block content %}
-<section id="about">
-    <div class="container-lg">
-        <div class="wrapper glowing animate__animated animate__backInDown">
-            <div class="text text-center animate__animated animate__fadeIn animate__delay-1s">
-                <h1><span id="hand">👋</span> Hello</h1>
-                <p>I am Joise MP, a freelance Visual Product Designer and
-                    Developer based in Kochi, India.</p>
-                <ul
-                    class="nav justify-content-center mb-3 mt-3 icons animate__animated animate__fadeIn animate__delay-1s">
-                    <li class="nav-item"><a href="https://github.com/joisemp" target="_blank"
-                            class="nav-link px-4 text-light" title="Github"><i class="fa-brands fa-github"></i></a></li>
-                    <li class="nav-item"><a href="https://dribbble.com/joise_mp" target="_blank"
-                            class="nav-link px-4 text-light" title="Dribbble"><i class="fa-solid fa-basketball"></i></a></li>
-                    <li class="nav-item"><a href="https://instagram.com/joisemp" target="_blank"
-                            class="nav-link px-4 text-light" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li class="nav-item"><a href="https://www.linkedin.com/in/joisemp/" target="_blank"
-                            class="nav-link px-4 text-light" title="Linkedin"><i class="fa-brands fa-linkedin-in"></i></i></a></li>
-                </ul>
-                <div id="scroll">
-                    <div class="scroll"></div>
+    <section id="about">
+        <div class="container-lg">
+            <div class="wrapper glowing animate__animated animate__backInDown">
+                <div class="text text-center animate__animated animate__fadeIn animate__delay-1s">
+                    <h1>
+                        <span id="hand">👋</span> Hello
+                    </h1>
+                    <p>
+                        I am Joise MP, a freelance Visual Product Designer and
+                        Developer based in Kochi, India.
+                    </p>
+                    <ul class="nav justify-content-center mb-3 mt-3 icons animate__animated animate__fadeIn animate__delay-1s">
+                        <li class="nav-item">
+                            <a href="https://github.com/joisemp"
+                               target="_blank"
+                               class="nav-link px-4 text-light"
+                               title="Github"><i class="fa-brands fa-github"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://dribbble.com/joise_mp"
+                               target="_blank"
+                               class="nav-link px-4 text-light"
+                               title="Dribbble"><i class="fa-solid fa-basketball"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://instagram.com/joisemp"
+                               target="_blank"
+                               class="nav-link px-4 text-light"
+                               title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.linkedin.com/in/joisemp/"
+                               target="_blank"
+                               class="nav-link px-4 text-light"
+                               title="Linkedin"><i class="fa-brands fa-linkedin-in"></i></i></a>
+                        </li>
+                    </ul>
+                    <div id="scroll">
+                        <div class="scroll"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section id="projects" class="container-lg">
-
-    {% if programming_projects %}
-    {% for project in programming_projects %}
-    <a href="{% url 'projects:programming-project-detail-page' project.pk %}">
-        <div class="wrap animate__animated animate__fadeIn">
-            <figure class="figure">
-                <img src="{{ project.image.url }}" class="figure-img img-fluid rounded shadow" alt="...">
-            </figure>
-            <div class="text-wrap">
-                <div class="text">
-                    <h2 class="text-center">{{project.title}}</h2>
-                    <p class="text-center">{{project.company}} - {{project.year}}</p>
-                </div>
-            </div>
-        </div>
-    </a>
-    {% endfor %}
-    {% endif %}
-
-</section>
-
+    </section>
+    <section id="projects" class="container-lg">
+        {% if programming_projects %}
+            {% for project in programming_projects %}
+                <a href="{% url 'projects:programming-project-detail-page' project.pk %}">
+                    <div class="wrap animate__animated animate__fadeIn">
+                        <figure class="figure">
+                            <img src="{{ project.image.url }}"
+                                 class="figure-img img-fluid rounded shadow"
+                                 alt="...">
+                        </figure>
+                        <div class="text-wrap">
+                            <div class="text">
+                                <h2 class="text-center">{{ project.title }}</h2>
+                                <p class="text-center">{{ project.company }} - {{ project.year }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        {% endif %}
+    </section>
 {% endblock content %}
