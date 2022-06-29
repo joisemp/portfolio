@@ -26,3 +26,7 @@ class ContactPageView(generic.CreateView):
     
     def get_success_url(self):
         return reverse_lazy('projects:contact-page')
+
+class ProgrammingProjectDetailView(generic.DetailView):
+    model = models.ProgrammingProject
+    template_name = 'projects/programming_project.html'

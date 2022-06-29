@@ -1,50 +1,39 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-    {% load static %}
-    {% url 'projects:work-page' as workPage %}
-    {% url 'projects:about-page' as aboutPage %}
-    {% url 'projects:contact-page' as contactPage %}
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Joise MP{% block title %}{% endblock title %}</title>
-
-    <!-- Animation -->
-    <link rel="stylesheet" href="{% static 'base/css/animation.css' %}" />
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="{% static 'base/css/bootstrap.css' %}">
-    
-    <!-- General styles -->
-    <link rel="stylesheet" href="{% static 'navbar/style.css' %}">
-    <link rel="stylesheet" href="{% static 'footer/style.css' %}">
-
-    <!-- Styles for each page -->
-    {% if request.path == workPage %}
-    <link rel="stylesheet" href="{% static 'projects/work/style.css' %}">
-    {% elif request.path == aboutPage %}
-    <link rel="stylesheet" href="{% static 'projects/about/style.css' %}">
-    {% elif request.path == contactPage %}
-    <link rel="stylesheet" href="{% static 'projects/contact/style.css' %}">
-    {% endif %}
-
-    <!-- font-awesome cdn -->
-    <script src="https://kit.fontawesome.com/d2ef0bf498.js" crossorigin="anonymous"></script>
-
-    <link rel="icon" type="image/x-icon" href="{% static 'projects/work/icon.svg' %}">
-</head>
-
-<body>
-
-    
-    {% include "navbar.html" %}
-    {% block content %} {% endblock content %}
-    {% include "footer.html" %}
-
-
-    <script src="{% static 'base/js/bootstrap.js' %}" ></script>
-</body>
-
+    <head>
+        {% load static %}
+        {% url 'projects:work-page' as workPage %}
+        {% url 'projects:about-page' as aboutPage %}
+        {% url 'projects:contact-page' as contactPage %}
+        {% url 'projects:programming-project-detail-page' object.pk as programmingProjectDetail %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Joise MP
+            {% block title %}
+            {% endblock title %}
+        </title>
+        <!-- Animation -->
+        <link rel="stylesheet" href="{% static 'base/css/animation.css' %}" />
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="{% static 'base/css/bootstrap.css' %}">
+        <!-- General styles -->
+        <link rel="stylesheet" href="{% static 'navbar/style.css' %}">
+        <link rel="stylesheet" href="{% static 'footer/style.css' %}">
+        <!-- Styles for each page -->
+        {% block style %}
+        {% endblock style %}
+        <!-- font-awesome -->
+        <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
+        <link rel="icon"
+              type="image/x-icon"
+              href="{% static 'projects/work/icon.svg' %}">
+    </head>
+    <body>
+        {% include "navbar.html" %}
+        {% block content %}
+        {% endblock content %}
+        {% include "footer.html" %}
+        <script src="{% static 'base/js/bootstrap.js' %}"></script>
+        <script src="{% static 'fontawesome/js/all.js' %}"></script>
+    </body>
 </html>
