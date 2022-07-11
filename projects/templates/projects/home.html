@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %} <link rel="stylesheet" href="{% static 'projects/home/style.css' %}"> {% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <section id="hero">
+        <div class="row">
+            <div class="col-md-9 order-2 order-md-1">
+                <div class="text-wrap">
+                    <h1 class="heading mb-1">Joise MP</h1>
+                    <h2 class="text mb-3 mt-2">
+                        Freelance <b>Web-Developer</b> and <b>Designer</b>
+                    </h2>
+                    <h2 class="text">
+                        Helping people build a faster website. Learning about web-development,
+                        serverless, and React / Django.
+                    </h2>
+                    <ul class="nav mb-3 mt-3 icon-stack">
+                        <li class="nav-item">
+                            <a href="https://github.com/joisemp"
+                               target="_blank"
+                               class="nav-link px-4"
+                               title="Github"><i class="fa-brands fa-github"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://dribbble.com/joise_mp"
+                               target="_blank"
+                               class="nav-link px-4"
+                               title="Dribbble"><i class="fa-solid fa-basketball"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://instagram.com/joisemp"
+                               target="_blank"
+                               class="nav-link px-4"
+                               title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.linkedin.com/in/joisemp/"
+                               target="_blank"
+                               class="nav-link px-4"
+                               title="Linkedin"><i class="fa-brands fa-linkedin-in"></i></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 order-1 order-md-2">
+                <img class="mb-3" src="{% static 'base/pro-img.png' %}" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="ps-2 pe-2" id="projects">
+        <h1 class="heading-md mb-4">Projects</h1>
+
+        <a href="project-detail.html" class="card mb-3">
+            <div class="wrapper">
+                <div>
+                    <i class="fa-solid fa-bezier-curve icon"></i>
+                </div>
+                <div class="mt-5">
+                    <p class="card-title">
+                        FIID INDIA Website
+                    </p>
+                    <p class="text"><b>Role</b>: Full Stack Developer</p>
+                    <p class="text">
+                        A completely new website with admin controls was designed and developed. Django was used for the backend HTML, and SCSS and Bootstrap were used for the frontend design. MySQL was used as the database. Some of the features are responsive design and the ability to publish newsletters.
+                    </p>
+                    <p class="learn-more">
+                        Learn more<i class="fa-solid fa-arrow-right ps-2 pt-2"></i>
+                    </p>
+                </div>
+            </div>
+        </a>
+
+        <div class="mb-5">
+            <a href="#" class="btn primary-btn">View all<i class="fa-solid fa-arrow-right ps-2 pt-2"></i></a>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+    
+</div>
+
+
+{% endblock %}

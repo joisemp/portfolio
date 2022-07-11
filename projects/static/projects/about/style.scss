@@ -1,0 +1,12 @@
+@import "../base", "../navbar/navbar.scss", "../footer/footer.scss", "../goback/goback";
+
+#about {
+    .figure {
+        img {
+            width: 100%;
+            max-width: 300px;
+            border: 2px solid black;
+            filter: grayscale(1);
+        }
+    }
+}

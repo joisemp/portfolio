@@ -1,5 +1,3 @@
-from email import message
-from turtle import title
 from django.db import models
 import sys
 import PIL
@@ -7,13 +5,27 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 from io import BytesIO
 
 
-class ProgrammingProject(models.Model):
+class Project(models.Model):
     title = models.CharField(max_length=200)
     company = models.CharField(max_length=200)
     year = models.CharField(max_length=200)
+    role = models.CharField(max_length=200)
     image = models.ImageField(upload_to='images/programming_projects/')
-    summary = models.TextField(null=True, blank=True)
-    link = models.CharField(null=True, blank=True, max_length=300)
+    summary = models.TextField()
+    primary_button_text = models.CharField(null=True, blank=True, max_length=300)
+    primary_link = models.CharField(null=True, blank=True, max_length=300)
+    primary_button_icon = models.CharField(null=True, blank=True, max_length=300)
+    secondary_button_text = models.CharField(null=True, blank=True, max_length=300)
+    secondary_link = models.CharField(null=True, blank=True, max_length=300)
+    secondary_button_icon = models.CharField(null=True, blank=True, max_length=300)
+    python = models.BooleanField(null=True, blank=True)
+    bootstrap = models.BooleanField(null=True, blank=True)
+    figma = models.BooleanField(null=True, blank=True)
+    html = models.BooleanField(null=True, blank=True)
+    js = models.BooleanField(null=True, blank=True)
+    react = models.BooleanField(null=True, blank=True)
+    scss = models.BooleanField(null=True, blank=True)
+    github = models.BooleanField(null=True, blank=True)
     
     def save(self):
         # Opening the uploaded image
@@ -32,7 +44,7 @@ class ProgrammingProject(models.Model):
         self.image = InMemoryUploadedFile(output, 'ImageField', "%s.jpg" % self.image.name.split('.')[0], 'image/jpeg',
                                           sys.getsizeof(output), None)
 
-        super(ProgrammingProject, self).save()
+        super(Project, self).save()
     
     def __str__(self):
         return(self.title)

@@ -1,0 +1,10 @@
+.footer {
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    .nav-item > a {
+        color: rgb(0, 0, 0);
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

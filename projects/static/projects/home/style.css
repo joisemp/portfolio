@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: #f9fafb;
+}
+
+.heading {
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
+@media only screen and (max-width: 767px) {
+  .heading {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+.heading-md {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  color: rgb(26, 26, 26);
+}
+@media only screen and (max-width: 767px) {
+  .heading-md {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.text {
+  color: #333333;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.7rem;
+}
+
+.primary-btn {
+  color: white;
+  background: black;
+  padding: 0.5rem 2rem;
+  border-radius: 0.2rem;
+  border: 2px solid black;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+}
+.primary-btn:hover {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.secondary-btn {
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
+  padding: 0.5rem 2rem;
+  border-radius: 0.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+}
+.secondary-btn:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border: 2px solid black;
+}
+
+.icon {
+  font-size: 1.8rem;
+  color: rgb(0, 0, 0);
+}
+@media only screen and (max-width: 767px) {
+  .icon {
+    font-size: 1.3rem;
+  }
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
+@media only screen and (max-width: 767px) {
+  .card-title {
+    font-size: 1.3rem;
+  }
+}
+
+.learn-more {
+  font-weight: 500;
+  color: rgb(19, 19, 19);
+}
+
+.container {
+  max-width: 730px;
+  margin-top: 8rem;
+}
+@media only screen and (max-width: 767px) {
+  .container {
+    max-width: 446px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    margin-top: 10rem;
+  }
+}
+
+.tags .badge {
+  padding: 8px 20px;
+  margin: 6px 3px;
+  text-transform: uppercase;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 2px solid black;
+  transition: all 0.3s ease-out;
+}
+.tags .badge:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.tags .fa-brands {
+  font-size: 1rem;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+}
+
+::selection {
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.navbar-expand-md {
+  background-color: #f9fafb;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+.navbar-expand-md .navbar-toggler {
+  border: none !important;
+  color: black !important;
+}
+@media only screen and (min-width: 768px) {
+  .navbar-expand-md .navbar-nav {
+    padding-top: 1.2rem;
+  }
+}
+.navbar-expand-md .navbar-nav .nav-item .active {
+  font-weight: 600 !important;
+}
+@media only screen and (min-width: 768px) {
+  .navbar-expand-md .navbar-nav .nav-item .active:hover {
+    color: rgb(0, 0, 0);
+  }
+  .navbar-expand-md .navbar-nav .nav-item a:hover {
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
+    background-color: #ffffff;
+    border-radius: 0.2rem;
+  }
+}
+.navbar-expand-md .navbar-nav .nav-item .nav-link {
+  text-align: center;
+  padding: 2rem 0;
+  font-weight: 400;
+}
+@media only screen and (min-width: 768px) {
+  .navbar-expand-md .navbar-nav .nav-item .nav-link {
+    padding: 0.5rem 2rem;
+  }
+}
+
+.footer {
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+}
+.footer .nav-item > a {
+  color: rgb(0, 0, 0);
+}
+.footer .nav-item > a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+  #hero .text-wrap {
+    max-width: 425px;
+  }
+}
+#hero .icon-stack .nav-item > a {
+  color: black;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  transition: all 0.1s ease-in-out;
+}
+#hero .icon-stack .nav-item > a:hover {
+  font-size: 1.5rem;
+}
+#hero img {
+  width: 100%;
+  max-width: 140px;
+  border-radius: 50%;
+  border: 2px solid black;
+  filter: grayscale(1);
+}
+
+#projects {
+  margin-top: 3rem;
+}
+#projects .card {
+  padding: 1rem;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid black;
+  transition: box-shadow 0.3s ease-in-out;
+}
+#projects .card:hover {
+  box-shadow: 0 5px 15px rgba(184, 184, 184, 0.8);
+}
+#projects .card:hover .learn-more {
+  text-decoration: underline;
+}
+#projects .card .wrapper {
+  display: flex;
+}/*# sourceMappingURL=style.css.map */
