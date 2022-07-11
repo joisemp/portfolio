@@ -1,6 +1,44 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block stylesheet %} <link rel="stylesheet" href="{% static 'projects/contact/style.css' %}"> {% endblock %}
+
 {% block content %}
-<h1>Conatct page</h1>
+
+<div class="container">
+    <div class="go-back">
+        <a onclick="goBack()" class="text"><i class="fa-solid fa-arrow-left go-back-icon"></i>go back</a>
+    </div>
+
+    <section id="contact" class="mb-5">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="full_name" maxlength="300" required id="id_full_name"
+                    placeholder="John Paul">
+                <label for="floatingInput">Full name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" name="email_id" maxlength="300" required id="id_email_id"
+                    placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="subject" maxlength="300" required id="id_subject"
+                    placeholder="Subject">
+                <label for="floatingInput">Subject</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" name="message" required id="id_message"
+                    placeholder="Leave the message here" id="floatingTextarea2" style="height: 300px"></textarea>
+                <label for="floatingTextarea2">Message</label>
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn primary-btn" type="submit">Send Message</button>
+            </div>
+        </form>
+    </section>
+
+    {% include 'footer.html' %}
+
 {% endblock %}

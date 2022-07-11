@@ -9,6 +9,7 @@ from django.urls import reverse_lazy
 class HomePageView(generic.ListView):
     template_name = 'projects/home.html'
     model = models.Project
+    context_object_name = 'projects'
 
 
 class AboutPageView(generic.TemplateView):

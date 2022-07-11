@@ -25,6 +25,7 @@ class ContactEmail:
 
     # Send email to admin on contact form submission
     def send_to_admin(self):
+        print("mail send")
         html_content = render_to_string('send_to_admin.html', {
                                         'full_name': self.full_name, 'subject': self.subject, 'message': self.message, 'email': self.sender_email_id, })
         text_content = strip_tags(html_content)

@@ -56,18 +56,20 @@
     <section class="ps-2 pe-2" id="projects">
         <h1 class="heading-md mb-4">Projects</h1>
 
-        <a href="project-detail.html" class="card mb-3">
+
+        {% for project in projects %}
+        <a href="{% url 'projects:project-detail-page' project.pk %}" class="card mb-3">
             <div class="wrapper">
                 <div>
                     <i class="fa-solid fa-bezier-curve icon"></i>
                 </div>
                 <div class="mt-5">
                     <p class="card-title">
-                        FIID INDIA Website
+                        {{project.title}}
                     </p>
-                    <p class="text"><b>Role</b>: Full Stack Developer</p>
+                    <p class="text"><b>Role</b>: {{project.role}}</p>
                     <p class="text">
-                        A completely new website with admin controls was designed and developed. Django was used for the backend HTML, and SCSS and Bootstrap were used for the frontend design. MySQL was used as the database. Some of the features are responsive design and the ability to publish newsletters.
+                        {{project.summary}}
                     </p>
                     <p class="learn-more">
                         Learn more<i class="fa-solid fa-arrow-right ps-2 pt-2"></i>
@@ -75,6 +77,8 @@
                 </div>
             </div>
         </a>
+        {% endfor %}
+
 
         <div class="mb-5">
             <a href="#" class="btn primary-btn">View all<i class="fa-solid fa-arrow-right ps-2 pt-2"></i></a>
