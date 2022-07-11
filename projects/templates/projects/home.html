@@ -79,10 +79,12 @@
         </a>
         {% endfor %}
 
-
+        {% if projects.count > 3 %}
         <div class="mb-5">
             <a href="#" class="btn primary-btn">View all<i class="fa-solid fa-arrow-right ps-2 pt-2"></i></a>
         </div>
+        {% endif %}
+
     </section>
 
     {% include 'footer.html' %}

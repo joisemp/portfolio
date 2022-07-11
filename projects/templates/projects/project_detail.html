@@ -1,6 +1,71 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block stylesheet %} <link rel="stylesheet" href="{% static 'projects/project-detail/style.css' %}"> {% endblock %}
+
 {% block content %}
-<h1>Project detail page</h1>
+
+
+<div class="container">
+    <div class="go-back">
+        <a onclick="goBack()" class="text"><i class="fa-solid fa-arrow-left go-back-icon"></i>go back</a>
+    </div>
+
+    <section class="mb-5">
+        <div class="wrap mb-2">
+            <figure class="figure">
+                <img id="project-img"
+                    src="{{object.image.url}}"
+                    onclick="toogleImgFilter('project-img')" class="rounded" alt="...">
+                <figcaption class="figure-caption">Click on the image to remove filter</figcaption>
+            </figure>
+        </div>
+        <div class="tags mb-4">
+            {% if object.python %}
+            <span class="badge rounded-pill"><i class="fa-brands fa-python pe-2"></i>Python</span>
+            {% endif %}
+            {% if object.bootstrap %}
+            <span class="badge rounded-pill"><i class="fa-brands fa-bootstrap pe-2"></i>Bootstrap</span>
+            {% endif %}
+            {% if object.figma %}
+            <span class="badge rounded-pill"><i class="fa-brands fa-figma pe-2"></i>Figma</span>
+            {% endif %}
+            {% if object.html %}
+            <span class="badge rounded-pill"><i class="fa-brands fa-html5 pe-2"></i>HTML</span>
+            {% endif %}
+            {% if object.js %}
+            <span class="badge rounded-pill"><i class="fa-brands fa-js pe-2"></i>Javascript</span>
+            {% endif %}
+            {% if object.react %}
+            <span class="badge rounded-pill"><i class="fa-brands fa-react pe-2"></i>React</span>
+            {% endif %}
+            {% if object.scss %}
+            <span class="badge rounded-pill"><i class="fa-brands fa-sass pe-2"></i>SCSS</span>
+            {% endif %}
+            {% if object.github %}
+            <span class="badge rounded-pill"><i class="fa-brands fa-github pe-2"></i>Github</span>
+            {% endif %}
+        </div>
+
+        <div class="text-wrap">
+            <h1 class="heading-md">{{object.title}}</h1>
+            <p class="text-muted"><b>{{object.company}} - {{object.year}}</b></p>
+            <p><b>Role</b> : {{object.role}}</p>
+            <p>
+                {{object.summary}}
+            </p>
+            <a href="https://{{object.primary_link}}" target="_blank" class="btn primary-btn">{{object.primary_button_text}}</a>
+            <a href="https://{{object.secondary_link}}" target="_blank" class="btn secondary-btn">{{object.secondary_button_text}}</a>
+        </div>
+
+    </section>
+
+
+
+
+    {% include 'footer.html' %}
+
+</div>
+
+
 {% endblock %}

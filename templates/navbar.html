@@ -14,13 +14,13 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{% url 'projects:home-page'%}">Work</a>
+                            <a class="nav-link {% if request.path == homePage %}active{% endif %}" href="{% url 'projects:home-page'%}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'projects:about-page'%}">About</a>
+                            <a class="nav-link {% if request.path == aboutPage %}active{% endif %}" href="{% url 'projects:about-page'%}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'projects:contact-page'%}">Contact</a>
+                            <a class="nav-link {% if request.path == contactPage %}active{% endif %}" href="{% url 'projects:contact-page'%}">Contact</a>
                         </li>
                     </ul>
                 </div>

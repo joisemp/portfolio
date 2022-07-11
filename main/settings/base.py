@@ -1,4 +1,5 @@
 from json import load
+import os
 import dj_database_url
 from pathlib import Path
 from decouple import config
@@ -101,5 +102,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

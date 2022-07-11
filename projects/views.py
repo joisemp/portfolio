@@ -10,6 +10,7 @@ class HomePageView(generic.ListView):
     template_name = 'projects/home.html'
     model = models.Project
     context_object_name = 'projects'
+    queryset = models.Project.objects.order_by('-id')[:3]
 
 
 class AboutPageView(generic.TemplateView):

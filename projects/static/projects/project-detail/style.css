@@ -233,7 +233,7 @@ body {
 
 .wrap {
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 .wrap .figure img {
   -o-object-fit: cover;
