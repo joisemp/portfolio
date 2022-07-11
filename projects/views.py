@@ -1,19 +1,16 @@
 from django.shortcuts import render
-from django.urls import reverse_lazy
 from django.views import generic
 from . import models
 from . forms import ContactForm
-from . emails import ContactEmail
+from . mail import ContactEmail
+from django.urls import reverse_lazy
 
 
-class WorkPageView(generic.TemplateView):
-    template_name = 'projects/work.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(WorkPageView, self).get_context_data(**kwargs)
-        context['programming_projects'] = models.ProgrammingProject.objects.all(
-        ).order_by('-year')
-        return context
+class HomePageView(generic.ListView):
+    template_name = 'projects/home.html'
+    model = models.Project
+    context_object_name = 'projects'
+    queryset = models.Project.objects.order_by('-id')[:3]
 
 
 class AboutPageView(generic.TemplateView):
@@ -41,6 +38,6 @@ class ContactPageView(generic.CreateView):
         return reverse_lazy('projects:contact-page')
 
 
-class ProgrammingProjectDetailView(generic.DetailView):
-    model = models.ProgrammingProject
-    template_name = 'projects/programming_project.html'
+class ProjectDetailView(generic.DetailView):
+    model = models.Project
+    template_name = 'projects/project_detail.html'

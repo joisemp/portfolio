@@ -1,39 +1,30 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        {% load static %}
-        {% url 'projects:work-page' as workPage %}
-        {% url 'projects:about-page' as aboutPage %}
-        {% url 'projects:contact-page' as contactPage %}
-        {% url 'projects:programming-project-detail-page' object.pk as programmingProjectDetail %}
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Joise MP
-            {% block title %}
-            {% endblock title %}
-        </title>
-        <!-- Animation -->
-        <link rel="stylesheet" href="{% static 'base/css/animation.css' %}" />
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="{% static 'base/css/bootstrap.css' %}">
-        <!-- General styles -->
-        <link rel="stylesheet" href="{% static 'navbar/style.css' %}">
-        <link rel="stylesheet" href="{% static 'footer/style.css' %}">
-        <!-- Styles for each page -->
-        {% block style %}
-        {% endblock style %}
-        <!-- font-awesome -->
-        <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
-        <link rel="icon"
-              type="image/x-icon"
-              href="{% static 'projects/work/icon.svg' %}">
-    </head>
-    <body>
-        {% include "navbar.html" %}
-        {% block content %}
-        {% endblock content %}
-        {% include "footer.html" %}
-        <script src="{% static 'base/js/bootstrap.js' %}"></script>
-        <script src="{% static 'fontawesome/js/all.js' %}"></script>
-    </body>
+{% load static %}
+{% url 'projects:home-page' as homePage %}
+{% url 'projects:contact-page' as contactPage %}
+{% url 'projects:about-page' as aboutPage %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Joise MP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
+
+    <link rel="icon" type="image/x-icon" href="{% static 'base/pro-pic-1.png' %}">
+    {% block stylesheet %} {% endblock %}
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    {% block content %}{% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'base/main.js' %}"></script>
+    <script src="{% static 'fontawesome/js/all.js' %}" crossorigin="anonymous"></script>
+</body>
+
 </html>

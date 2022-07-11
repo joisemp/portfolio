@@ -1,95 +1,44 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}
-    | Contact
-{% endblock title %}
-{% block style %}
-    <link rel="stylesheet" href="{% static 'projects/contact/style.css' %}">
-{% endblock style %}
+
+{% block stylesheet %} <link rel="stylesheet" href="{% static 'projects/contact/style.css' %}"> {% endblock %}
+
 {% block content %}
-    <section id="contact">
-        <div class="container animate__animated animate__fadeIn">
-            <div class="row">
-                <div class="col-12 col-md-6 order-2 order-md-1">
-                    <form method="post">
-                        {% csrf_token %}
-                        <div class="form-floating mb-3">
-                            <input type="text"
-                                   class="form-control"
-                                   name="full_name"
-                                   maxlength="300"
-                                   required
-                                   id="id_full_name"
-                                   placeholder="John Paul">
-                            <label for="floatingInput">Full name</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="email"
-                                   class="form-control"
-                                   name="email_id"
-                                   maxlength="300"
-                                   required
-                                   id="id_email_id"
-                                   placeholder="name@example.com">
-                            <label for="floatingInput">Email address</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text"
-                                   class="form-control"
-                                   name="subject"
-                                   maxlength="300"
-                                   required
-                                   id="id_subject"
-                                   placeholder="Subject">
-                            <label for="floatingInput">Subject</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control"
-                                      name="message"
-                                      required
-                                      id="id_message"
-                                      placeholder="Leave the message here"
-                                      id="floatingTextarea2"
-                                      style="height: 300px"></textarea>
-                            <label for="floatingTextarea2">Message</label>
-                        </div>
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-danger" type="submit">Send Message</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-12 col-md-6 order-1 order-md-2">
-                    <div class="text text-center">
-                        <p>Email : contactjoise@gmail.com</p>
-                        <ul class="nav justify-content-center mb-5 mt-3 icons">
-                            <li class="nav-item">
-                                <a href="https://github.com/joisemp"
-                                   target="_blank"
-                                   class="nav-link px-4 text-light"
-                                   title="Github"><i class="fa-brands fa-github"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://dribbble.com/joise_mp"
-                                   target="_blank"
-                                   class="nav-link px-4 text-light"
-                                   title="Dribbble"><i class="fa-solid fa-basketball"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://instagram.com/joisemp"
-                                   target="_blank"
-                                   class="nav-link px-4 text-light"
-                                   title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.linkedin.com/in/joisemp/"
-                                   target="_blank"
-                                   class="nav-link px-4 text-light"
-                                   title="Linkedin"><i class="fa-brands fa-linkedin-in"></i></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+
+<div class="container">
+    <div class="go-back">
+        <a onclick="goBack()" class="text"><i class="fa-solid fa-arrow-left go-back-icon"></i>go back</a>
+    </div>
+
+    <section id="contact" class="mb-5">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="full_name" maxlength="300" required id="id_full_name"
+                    placeholder="John Paul">
+                <label for="floatingInput">Full name</label>
             </div>
-        </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" name="email_id" maxlength="300" required id="id_email_id"
+                    placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="subject" maxlength="300" required id="id_subject"
+                    placeholder="Subject">
+                <label for="floatingInput">Subject</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" name="message" required id="id_message"
+                    placeholder="Leave the message here" id="floatingTextarea2" style="height: 300px"></textarea>
+                <label for="floatingTextarea2">Message</label>
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn primary-btn" type="submit">Send Message</button>
+            </div>
+        </form>
     </section>
-{% endblock content %}
+
+    {% include 'footer.html' %}
+
+{% endblock %}

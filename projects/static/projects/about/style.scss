@@ -1,29 +1,12 @@
-#about {
-    padding: 20vh 0 10vh 0;
-    @media only screen and (max-width: 767px){
-        padding-top: 15vh;
-    }
-    .profile-image{
-        img {
-            border-radius: 5px;
-            width: 100%;
-            max-width: 516px;
-            @media only screen and (min-width: 411px){
-                border-radius: 50%;
-            }
-        }
-    }
+@import "../base", "../navbar/navbar.scss", "../footer/footer.scss", "../goback/goback";
 
-    .text {
-        color: #ffff;
-        margin-top: 20%;
-        text-align: justify;
-        font-size: 1.22rem;
-        line-height: 2rem;
-        font-weight: 300;
-        @media only screen and (max-width: 767px){
-            font-size: 1.11rem;
-            margin-top: 2rem;
+#about {
+    .figure {
+        img {
+            width: 100%;
+            max-width: 300px;
+            border: 2px solid black;
+            filter: grayscale(1);
         }
     }
 }

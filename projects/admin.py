@@ -1,7 +1,7 @@
 from django.contrib import admin
 from . import models
 
-admin.site.register(models.ProgrammingProject)
+admin.site.register(models.Project)
 
 @admin.register(models.Contact)
 class ContactAdmin(admin.ModelAdmin):
