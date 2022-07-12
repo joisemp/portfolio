@@ -1,7 +1,13 @@
 from django.contrib import admin
 from . import models
+from . forms import ProjectForm
 
-admin.site.register(models.Project)
+
+@admin.register(models.Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ('project_type', 'title')
+    form = ProjectForm
+
 
 @admin.register(models.Contact)
 class ContactAdmin(admin.ModelAdmin):

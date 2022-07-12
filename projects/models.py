@@ -4,20 +4,27 @@ import PIL
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from io import BytesIO
 
+from django.dispatch import receiver
+from django.db.models.signals import pre_delete
 
 class Project(models.Model):
+    project_type = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
     company = models.CharField(max_length=200)
     year = models.CharField(max_length=200)
     role = models.CharField(max_length=200)
     image = models.ImageField(upload_to='images/programming_projects/')
     summary = models.TextField()
-    primary_button_text = models.CharField(null=True, blank=True, max_length=300)
+    primary_button_text = models.CharField(
+        null=True, blank=True, max_length=300)
     primary_link = models.CharField(null=True, blank=True, max_length=300)
-    primary_button_icon = models.CharField(null=True, blank=True, max_length=300)
-    secondary_button_text = models.CharField(null=True, blank=True, max_length=300)
+    primary_button_icon = models.CharField(
+        null=True, blank=True, max_length=300)
+    secondary_button_text = models.CharField(
+        null=True, blank=True, max_length=300)
     secondary_link = models.CharField(null=True, blank=True, max_length=300)
-    secondary_button_icon = models.CharField(null=True, blank=True, max_length=300)
+    secondary_button_icon = models.CharField(
+        null=True, blank=True, max_length=300)
     python = models.BooleanField(null=True, blank=True)
     bootstrap = models.BooleanField(null=True, blank=True)
     figma = models.BooleanField(null=True, blank=True)
@@ -26,7 +33,7 @@ class Project(models.Model):
     react = models.BooleanField(null=True, blank=True)
     scss = models.BooleanField(null=True, blank=True)
     github = models.BooleanField(null=True, blank=True)
-    
+
     def save(self):
         # Opening the uploaded image
         im = PIL.Image.open(self.image)
@@ -45,10 +52,10 @@ class Project(models.Model):
                                           sys.getsizeof(output), None)
 
         super(Project, self).save()
-    
+
     def __str__(self):
         return(self.title)
-    
+
 
 class Contact(models.Model):
     date = models.DateTimeField(auto_now_add=True)
@@ -56,6 +63,12 @@ class Contact(models.Model):
     email_id = models.CharField(max_length=300)
     subject = models.CharField(max_length=300)
     message = models.TextField()
-    
+
     def __str__(self):
         return str(self.full_name)
+
+
+@receiver(pre_delete, sender=Project)
+def Carousel_delete(sender, instance, **kwargs):
+    # Pass false so FileField doesn't save the model.
+    instance.image.delete(False)
