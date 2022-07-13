@@ -41,3 +41,10 @@ class ContactPageView(generic.CreateView):
 class ProjectDetailView(generic.DetailView):
     model = models.Project
     template_name = 'projects/project_detail.html'
+
+
+class ProjectListPageView(generic.ListView):
+    template_name = 'projects/project_list.html'
+    model = models.Project
+    context_object_name = 'projects'
+    queryset = models.Project.objects.order_by('-id')
