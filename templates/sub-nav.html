@@ -3,6 +3,7 @@
         <div class="col-6">
             <a onclick="goBack()" class="go-back"><i class="fa-solid fa-arrow-left go-back-icon"></i>go back</a>
         </div>
+        {% if request.path == projectListPage %}
         <div class="col-6">
             <div class="dropstart">
                 <a class="filter" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" href="#">Filter
@@ -14,5 +15,6 @@
                 </ul>
             </div>
         </div>
+        {% endif %}
     </div>
 </div>
