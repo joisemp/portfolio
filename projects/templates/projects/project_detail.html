@@ -53,8 +53,12 @@
             <p>
                 {{object.summary}}
             </p>
-            <a href="https://{{object.primary_link}}" target="_blank" class="btn primary-btn">{{object.primary_button_text}}</a>
-            <a href="https://{{object.secondary_link}}" target="_blank" class="btn secondary-btn">{{object.secondary_button_text}}</a>
+            <div>
+                <a href="https://{{object.primary_link}}" target="_blank" class="btn primary-btn">{{object.primary_button_text | safe}}</a>
+                {% if object.secondary_link %}
+                <a href="https://{{object.secondary_link}}" target="_blank" class="btn secondary-btn">{{object.secondary_button_text | safe}}</a>
+                {% endif %}
+            </div>
         </div>
 
     </section>

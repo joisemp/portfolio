@@ -18,13 +18,9 @@ class Project(models.Model):
     primary_button_text = models.CharField(
         null=True, blank=True, max_length=300)
     primary_link = models.CharField(null=True, blank=True, max_length=300)
-    primary_button_icon = models.CharField(
-        null=True, blank=True, max_length=300)
     secondary_button_text = models.CharField(
         null=True, blank=True, max_length=300)
     secondary_link = models.CharField(null=True, blank=True, max_length=300)
-    secondary_button_icon = models.CharField(
-        null=True, blank=True, max_length=300)
     python = models.BooleanField(null=True, blank=True)
     bootstrap = models.BooleanField(null=True, blank=True)
     figma = models.BooleanField(null=True, blank=True)
