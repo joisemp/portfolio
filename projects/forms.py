@@ -6,6 +6,12 @@ PROJECT_TYPE = (
     ("Design", "Design"),
 )
 
+ROLE = (
+    ("Full Stack Developer", "Full Stack Developer"),
+    ("Web-Designer", "Web-Designer"),
+    ("Designer", "Designer"),
+)
+
 
 class ContactForm(forms.ModelForm):
     class Meta:
@@ -18,5 +24,6 @@ class ProjectForm(forms.ModelForm):
         model = Project
         fields = '__all__'
         widgets = {
-            'project_type': forms.Select(choices=PROJECT_TYPE)
+            'project_type': forms.Select(choices=PROJECT_TYPE),
+            'role': forms.Select(choices=ROLE),
         }

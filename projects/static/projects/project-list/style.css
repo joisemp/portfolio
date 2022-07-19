@@ -42,7 +42,7 @@ body {
 .primary-btn {
   color: white;
   background: black;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.2rem;
   border: 2px solid black;
   font-weight: 500;
@@ -58,7 +58,7 @@ body {
   color: rgb(0, 0, 0);
   background: rgb(255, 255, 255);
   border: 2px solid rgb(0, 0, 0);
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.2rem;
   font-weight: 500;
   transition: all 0.3s ease-out;
