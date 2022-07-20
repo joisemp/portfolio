@@ -48,3 +48,19 @@ class ProjectListPageView(generic.ListView):
     model = models.Project
     context_object_name = 'projects'
     queryset = models.Project.objects.order_by('-id')
+
+
+class ProgrammingProjectFilterView(generic.ListView):
+    template_name = 'projects/project_list.html'
+    model = models.Project
+    context_object_name = 'projects'
+    queryset = models.Project.objects.filter(
+        project_type="Programming").order_by('-id')
+
+
+class DesignProjectFilterView(generic.ListView):
+    template_name = 'projects/project_list.html'
+    model = models.Project
+    context_object_name = 'projects'
+    queryset = models.Project.objects.filter(
+        project_type="Design").order_by('-id')

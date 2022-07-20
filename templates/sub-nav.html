@@ -3,15 +3,15 @@
         <div class="col-6">
             <a onclick="goBack()" class="go-back"><i class="fa-solid fa-arrow-left go-back-icon"></i>go back</a>
         </div>
-        {% if request.path == projectListPage %}
+        {% if request.path == projectListPage or request.path == programmingProjectListPage or request.path == designProjectListPage %}
         <div class="col-6">
             <div class="dropstart">
                 <a class="filter" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" href="#">Filter
                     <i class="fa-solid fa-filter icon-filter"></i></a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item active" href="#">All Projects</a></li>
-                    <li><a class="dropdown-item" href="#">Programming Projects</a></li>
-                    <li><a class="dropdown-item" href="#">Design Projects</a></li>
+                    <li><a class="dropdown-item {% if request.path == projectListPage %}active{% endif %}" href="{{projectListPage}}">All Projects</a></li>
+                    <li><a class="dropdown-item {% if request.path == programmingProjectListPage %}active{% endif %}" href="{{programmingProjectListPage}}">Programming Projects</a></li>
+                    <li><a class="dropdown-item {% if request.path == designProjectListPage %}active{% endif %}" href="{{designProjectListPage}}">Design Projects</a></li>
                 </ul>
             </div>
         </div>
