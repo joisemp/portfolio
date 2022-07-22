@@ -160,17 +160,6 @@ body {
   background: #555;
 }
 
-.footer {
-  color: rgb(0, 0, 0);
-  font-size: 1rem;
-}
-.footer .nav-item > a {
-  color: rgb(0, 0, 0);
-}
-.footer .nav-item > a:hover {
-  text-decoration: underline;
-}
-
 @media only screen and (min-width: 768px) {
   #hero .text-wrap {
     max-width: 425px;
