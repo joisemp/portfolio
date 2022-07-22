@@ -160,17 +160,6 @@ body {
   background: #555;
 }
 
-.footer {
-  color: rgb(0, 0, 0);
-  font-size: 1rem;
-}
-.footer .nav-item > a {
-  color: rgb(0, 0, 0);
-}
-.footer .nav-item > a:hover {
-  text-decoration: underline;
-}
-
 .sub-menu-wrap {
   margin-bottom: 2rem;
   max-width: 100%;
