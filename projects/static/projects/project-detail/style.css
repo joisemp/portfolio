@@ -160,45 +160,6 @@ body {
   background: #555;
 }
 
-.navbar-expand-md {
-  background-color: #f9fafb;
-  border-bottom: 2px solid rgb(0, 0, 0);
-}
-.navbar-expand-md .navbar-toggler {
-  border: none !important;
-  color: black !important;
-}
-@media only screen and (min-width: 768px) {
-  .navbar-expand-md .navbar-nav {
-    padding-top: 1.2rem;
-  }
-}
-.navbar-expand-md .navbar-nav .nav-item .active {
-  font-weight: 600 !important;
-}
-@media only screen and (min-width: 768px) {
-  .navbar-expand-md .navbar-nav .nav-item .active:hover {
-    color: rgb(0, 0, 0);
-  }
-  .navbar-expand-md .navbar-nav .nav-item a:hover {
-    font-weight: 600;
-    color: rgb(0, 0, 0);
-    border: 2px solid rgb(0, 0, 0);
-    background-color: #ffffff;
-    border-radius: 0.2rem;
-  }
-}
-.navbar-expand-md .navbar-nav .nav-item .nav-link {
-  text-align: center;
-  padding: 2rem 0;
-  font-weight: 400;
-}
-@media only screen and (min-width: 768px) {
-  .navbar-expand-md .navbar-nav .nav-item .nav-link {
-    padding: 0.5rem 2rem;
-  }
-}
-
 .footer {
   color: rgb(0, 0, 0);
   font-size: 1rem;
