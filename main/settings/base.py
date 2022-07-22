@@ -8,6 +8,7 @@ from dotenv import load_dotenv, find_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
+AUTH_USER_MODEL = 'accounts.User'
 
 # Application definition
 
@@ -18,10 +19,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # Extras
     'django_extensions',
     'storages',
     'django_cleanup.apps.CleanupConfig',
     
+    # Apps
+    'accounts',
     'projects',
 ]
 
@@ -98,6 +103,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Session expire at browser close
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
