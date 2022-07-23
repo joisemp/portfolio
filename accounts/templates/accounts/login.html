@@ -9,12 +9,26 @@
 {% block content %}
 
 <div class="container">
+
+    {% include 'sub-nav.html' %}
+
     <section id="login">
         <div class="wrapper">
             <h1 class="heading-md text-center mb-4">Login</h1>
             <div class="form-wrap">
                 <form method="post">
                     {% csrf_token %}
+
+
+                    {% if form.errors %}
+                        {% for error in form.non_field_errors %}
+                            <div class="alert alert-danger show text-center" role="alert">
+                                {{ error|escape }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+    
+
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="username" required maxlength="254">
                         <label for="floatingInput">Email address</label>
