@@ -1,0 +1,21 @@
+@import "../base";
+
+#password-reset-done {
+    .wrapper {
+        border: 2px solid rgb(0, 0, 0);
+        padding: 2rem;
+        margin-bottom: 3rem;
+        border-radius: 0.3rem;
+        background-color: rgb(255, 255, 255);
+
+        @media only screen and(max-width: 767px) {
+            padding: 2rem 1rem;
+        }
+
+        @media only screen and(max-width: 412px) {
+            .btn{
+                width: 100%;
+            }
+        }
+    }
+}
