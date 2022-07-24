@@ -1,8 +1,27 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block title %}Check inbox{% endblock title %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'accounts/password-reset-done/style.css' %}"> {% endblock %}
+
 {% block content %}
 
-<h1>You are succefully logged out</h1>
-<a href='{% url 'projects:home-page' %}'>Return</a>
+<div class="container">
+
+    {% include 'sub-nav.html' %}
+
+    <section id="password-reset-done">
+        <div class="wrapper text-center">
+            <h1 class="heading-md text-center mb-4">Logged out</h1>
+            <p class="text">You are successfully logged out</p>
+            <a href="{{homePage}}" class="primary-btn btn mt-2">Go to home <i class="fa-solid fa-arrow-right ps-2"></i></a>
+            <a href="{% url 'accounts:login' %}" class="secondary-btn btn mt-2">Return to login <i
+                    class="fa-solid fa-right-to-bracket ps-2"></i></a>
+        </div>
+    </section>
+</div>
 
 {% endblock content %}
