@@ -4,6 +4,7 @@ from . import models
 from . forms import ContactForm
 from . mail import ContactEmail
 from django.urls import reverse_lazy
+from django.contrib import messages
 
 
 class HomePageView(generic.ListView):
@@ -31,6 +32,9 @@ class ContactPageView(generic.CreateView):
         # Send email
         ContactEmail(full_name, sender_email_id,
                      subject, message).send_to_admin()
+        
+        notification = "Message sent successfully"
+        messages.success(self.request, notification)
 
         return super(ContactPageView, self).form_valid(form)
 

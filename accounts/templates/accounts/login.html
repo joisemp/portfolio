@@ -8,8 +8,6 @@
 
 {% block content %}
 
-<div class="container">
-
     {% include 'sub-nav.html' %}
 
     <section id="login">
@@ -19,7 +17,6 @@
                 <form method="post">
                     {% csrf_token %}
 
-
                     {% if form.errors %}
                         {% for error in form.non_field_errors %}
                             <div class="alert alert-danger show text-center" role="alert">
@@ -28,7 +25,6 @@
                         {% endfor %}
                     {% endif %}
     
-
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="username" required maxlength="254">
                         <label for="floatingInput">Email address</label>
@@ -51,7 +47,5 @@
             </div>
         </div>
     </section>
-</div>
-
 
 {% endblock content %}
