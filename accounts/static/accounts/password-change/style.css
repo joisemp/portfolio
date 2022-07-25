@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: #f9fafb;
+}
+
+.heading {
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
+@media only screen and (max-width: 767px) {
+  .heading {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+.heading-md {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  color: rgb(26, 26, 26);
+}
+@media only screen and (max-width: 767px) {
+  .heading-md {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.text {
+  color: #333333;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.7rem;
+}
+
+.primary-btn {
+  color: white;
+  background: black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  border: 2px solid black;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+}
+.primary-btn:hover {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.secondary-btn {
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+}
+.secondary-btn:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border: 2px solid black;
+}
+
+.icon {
+  font-size: 1.8rem;
+  color: rgb(0, 0, 0);
+}
+@media only screen and (max-width: 767px) {
+  .icon {
+    font-size: 1.3rem;
+  }
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
+@media only screen and (max-width: 767px) {
+  .card-title {
+    font-size: 1.3rem;
+  }
+}
+
+.learn-more {
+  font-weight: 500;
+  color: rgb(19, 19, 19);
+}
+
+.container {
+  max-width: 730px;
+  margin-top: 8rem;
+}
+@media only screen and (max-width: 767px) {
+  .container {
+    max-width: 446px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    margin-top: 10rem;
+  }
+}
+
+.tags .badge {
+  padding: 8px 20px;
+  margin: 6px 3px;
+  text-transform: uppercase;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 2px solid black;
+  transition: all 0.3s ease-out;
+}
+.tags .badge:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.tags .fa-brands {
+  font-size: 1rem;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+}
+
+::selection {
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(124, 124, 124);
+  border-radius: 0.1rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#change-password .wrapper {
+  border: 2px solid rgb(0, 0, 0);
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border-radius: 0.3rem;
+  background-color: rgb(255, 255, 255);
+}
+@media only screen and (max-width: 767px) {
+  #change-password .wrapper {
+    padding: 2rem 1rem;
+  }
+}
+#change-password .wrapper .btn {
+  padding: 1rem 0.75rem;
+}
+#change-password .wrapper .form-floating > .form-control,
+#change-password .wrapper .form-floating > .form-control-plaintext {
+  border-radius: 0.2rem;
+}
+#change-password .wrapper textarea:focus,
+#change-password .wrapper textarea.form-control:focus,
+#change-password .wrapper input.form-control:focus,
+#change-password .wrapper input[type=password]:focus,
+#change-password .wrapper input[type=email]:focus,
+#change-password .wrapper input[type=checkbox]:focus,
+#change-password .wrapper [type=password].form-control:focus,
+#change-password .wrapper [type=email].form-control:focus,
+#change-password .wrapper [contenteditable].form-control:focus {
+  box-shadow: none;
+  border: 2px solid black;
+}
+#change-password .wrapper .form-check-input:checked {
+  background-color: #000000;
+  border-color: #000000;
+}/*# sourceMappingURL=style.css.map */
