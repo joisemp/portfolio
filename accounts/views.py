@@ -2,6 +2,7 @@ from django.urls import reverse_lazy
 from . forms import CustomAuthenticationForm
 from django.contrib.auth import views
 from django.contrib.auth import login
+from django.contrib import messages
 
 
 class LoginView(views.LoginView):
@@ -14,6 +15,10 @@ class LoginView(views.LoginView):
         login(self.request, form.get_user())
         if remember_me:
             self.request.session.set_expiry(1209600)
+            
+        message = "You have logged in successfully"
+        messages.success(self.request, message)
+        
         return super(LoginView, self).form_valid(form)
 
     def get_success_url(self):
