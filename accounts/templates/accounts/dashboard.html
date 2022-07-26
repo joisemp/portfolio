@@ -4,18 +4,25 @@
 
 {% block title %}Dashboard{% endblock title %}
 
+{% block navbar %}{% include 'admin_nav.html' %}{% endblock navbar %}
+
 {% block stylesheet %} <link rel="stylesheet" href="{% static 'projects/project-list/style.css' %}"> {% endblock %}
 
 {% block content %}
 
-<h1 class="heading">Dashboard</h1>
+<section id="project-list">
 
-<div class="row row-cols-1 row-cols-md-2 g-4" id="project-list">
+  <div class="input-group mb-5">
+    <input type="text" class="form-control shadow-none" placeholder="Project title" aria-label="Project title" aria-describedby="button-addon2">
+    <button class="btn primary-btn" type="button" id="button-addon2">Search</button>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-2 g-4">
     {% for project in projects %}
     
     <div class="col">
         <div class="card h-100">
-          <img src="https://images.pexels.com/photos/12576758/pexels-photo-12576758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="...">
+          <img src="{{project.image.url}}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{project.title}}</h5>
             <p class="card-text"><b>Project type : </b>{{project.project_type}}</p>
@@ -27,5 +34,6 @@
 
     {% endfor %}
 </div>
+</section>
 
 {% endblock content %}
