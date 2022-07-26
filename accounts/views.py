@@ -3,6 +3,8 @@ from . forms import CustomAuthenticationForm
 from django.contrib.auth import views
 from django.contrib.auth import login
 from django.contrib import messages
+from django.views import generic
+from projects import models
 
 
 class LoginView(views.LoginView):
@@ -53,3 +55,10 @@ class ConfirmPasswordResetView(views.PasswordResetConfirmView):
 
 class CompletePasswordResetView(views.PasswordResetCompleteView):
     template_name = 'accounts/password_reset/password_reset_complete.html'
+    
+    
+class DashboardView(generic.ListView):
+    template_name = 'accounts/dashboard.html'
+    model = models.Project
+    context_object_name = 'projects'
+    queryset = models.Project.objects.order_by('-id')
