@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Dashboard{% endblock title %}
+
+{% block navbar %}{% include 'admin_nav.html' %}{% endblock navbar %}
+
+{% block stylesheet %} <link rel="stylesheet" href="{% static 'accounts/dashboard-project-list/style.css' %}"> {% endblock %}
+
+{% block content %}
+
+<form method="post">
+  <div class="input-group mb-5 search">
+      <input type="text" class="form-control shadow-none" placeholder="Project title"
+          aria-label="Project title" aria-describedby="button-addon2">
+      <button class="btn primary-btn" type="submit" id="button-addon2">Search</button>
+  </div>
+</form>
+
+<div class="mb-5">
+    <a href="#" class="btn primary-btn">Create Project <i class="fa-solid fa-plus ps-2"></i></a>
+</div>
+
+<section id="project-list">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+
+      {% for project in projects %}
+      <div class="col">
+        <div class="card h-100">
+            <img src="{{project.image.url}}"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{project.title}}</h5>
+                <p class="card-text text"><b>Project type : </b>{{project.project_type}}</p>
+                <a href="#" class="btn primary-btn">Edit</a>
+                <a href="#" class="btn secondary-btn">Delete</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</section>
+
+{% endblock content %}
