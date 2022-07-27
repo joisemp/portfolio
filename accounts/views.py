@@ -24,7 +24,7 @@ class LoginView(views.LoginView):
         return super(LoginView, self).form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy('projects:home-page')
+        return reverse_lazy('accounts:dashboard-project-list')
 
 
 class UserLogoutView(views.LogoutView):
@@ -57,8 +57,8 @@ class CompletePasswordResetView(views.PasswordResetCompleteView):
     template_name = 'accounts/password_reset/password_reset_complete.html'
     
     
-class DashboardView(generic.ListView):
-    template_name = 'accounts/dashboard.html'
+class DashboardProjectListView(generic.ListView):
+    template_name = 'accounts/dashboard-project-list.html'
     model = models.Project
     context_object_name = 'projects'
     queryset = models.Project.objects.order_by('-id')

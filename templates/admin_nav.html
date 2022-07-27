@@ -6,6 +6,7 @@
 <nav class="navbar bg-light fixed-top navbar-expand-md">
     <div class="container-md">
         <a class="navbar-brand heading-md" href="#"><b>Dashboard</b></a>
+        {% if request.user.is_authenticated %}
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -24,10 +25,11 @@
                         <a class="nav-link" href="#">Contacts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout<i class="fa-solid fa-arrow-right-from-bracket ps-2"></i></a>
+                        <a class="nav-link" href="{% url 'accounts:logout' %}">Logout<i class="fa-solid fa-arrow-right-from-bracket ps-2"></i></a>
                     </li>
                 </ul>
             </div>
         </div>
+        {% endif %}
     </div>
 </nav>
