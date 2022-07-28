@@ -5,9 +5,10 @@ from django.contrib.auth import login
 from django.contrib import messages
 from django.views import generic
 from projects import models
+from .mixins import AdminAccessMixin, LoginRedirectMixin
 
 
-class LoginView(views.LoginView):
+class LoginView(LoginRedirectMixin, views.LoginView):
     authentication_form = CustomAuthenticationForm
     form_class = CustomAuthenticationForm
     template_name = 'accounts/login.html'
@@ -31,12 +32,12 @@ class UserLogoutView(views.LogoutView):
     template_name = 'accounts/logged_out.html'
 
 
-class ChangePasswordView(views.PasswordChangeView):
+class ChangePasswordView(AdminAccessMixin, views.PasswordChangeView):
     template_name = 'accounts/change-password.html'
-    success_url = reverse_lazy('projects:home-page')
+    success_url = reverse_lazy('accounts:dashboard-project-list')
 
 
-class ResetPasswordView(views.PasswordResetView):
+class ResetPasswordView(LoginRedirectMixin, views.PasswordResetView):
     email_template_name = 'accounts/password_reset/password_reset_email.html'
     html_email_template_name = 'accounts/password_reset/password_reset_email.html'
     subject_template_name = 'accounts/password_reset/password_reset_subject.txt'
@@ -44,20 +45,20 @@ class ResetPasswordView(views.PasswordResetView):
     template_name = 'accounts/password_reset/password_reset_form.html'
 
 
-class DonePasswordResetView(views.PasswordResetDoneView):
+class DonePasswordResetView(LoginRedirectMixin, views.PasswordResetDoneView):
     template_name = 'accounts/password_reset/password_reset_done.html'
 
 
-class ConfirmPasswordResetView(views.PasswordResetConfirmView):
+class ConfirmPasswordResetView(LoginRedirectMixin, views.PasswordResetConfirmView):
     success_url = reverse_lazy('accounts:complete-password-reset')
     template_name = 'accounts/password_reset/password_reset_confirm.html'
 
 
-class CompletePasswordResetView(views.PasswordResetCompleteView):
+class CompletePasswordResetView(LoginRedirectMixin, views.PasswordResetCompleteView):
     template_name = 'accounts/password_reset/password_reset_complete.html'
     
     
-class DashboardProjectListView(generic.ListView):
+class DashboardProjectListView(AdminAccessMixin, generic.ListView):
     template_name = 'accounts/dashboard-project-list.html'
     model = models.Project
     context_object_name = 'projects'
