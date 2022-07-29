@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.views import generic
 from projects import models
 from .mixins import AdminAccessMixin, LoginRedirectMixin
+from projects.forms import ProjectForm
 
 
 class LoginView(LoginRedirectMixin, views.LoginView):
@@ -63,3 +64,16 @@ class DashboardProjectListView(AdminAccessMixin, generic.ListView):
     model = models.Project
     context_object_name = 'projects'
     queryset = models.Project.objects.order_by('-id')
+    
+
+class ProjectUpdateView(generic.UpdateView):
+    model = models.Project
+    form_class = ProjectForm
+    template_name = 'accounts/project_update.html'
+    success_url = reverse_lazy('accounts:dashboard-project-list')
+    
+    def form_valid(self, form):
+        message = "Model Updated Successfully"
+        messages.success(self.request, message)
+        
+        return super(ProjectUpdateView, self).form_valid(form)

@@ -23,6 +23,8 @@ INSTALLED_APPS = [
     # Extras
     'django_extensions',
     'storages',
+    # python manage.py cleanup_unused_media \\ command to clear unused files
+    'django_unused_media',
     'django_cleanup.apps.CleanupConfig',
     
     # Apps
