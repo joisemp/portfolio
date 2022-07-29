@@ -33,7 +33,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{project.title}}</h5>
                 <p class="card-text text"><b>Project type : </b>{{project.project_type}}</p>
-                <a href="#" class="btn primary-btn">Edit</a>
+                <a href="{% url 'accounts:project-update-page' project.pk %}" class="btn primary-btn">Edit</a>
                 <a href="#" class="btn secondary-btn">Delete</a>
             </div>
         </div>
