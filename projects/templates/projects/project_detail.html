@@ -52,7 +52,7 @@
             </p>
             <div>
                 <a href="https://{{object.primary_link}}" target="_blank" class="btn primary-btn">{{object.primary_button_text | safe}}</a>
-                {% if object.secondary_link %}
+                {% if object.secondary_link and not object.secondary_link == "None" %}
                 <a href="https://{{object.secondary_link}}" target="_blank" class="btn secondary-btn">{{object.secondary_button_text | safe}}</a>
                 {% endif %}
             </div>

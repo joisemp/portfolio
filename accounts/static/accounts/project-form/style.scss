@@ -1,0 +1,44 @@
+@import '../base';
+
+#project-form {
+    .wrapper {
+        border: 2px solid rgb(0, 0, 0);
+        padding: 2rem;
+        margin-bottom: 3rem;
+        border-radius: 0.3rem;
+        background-color: rgb(255, 255, 255);
+
+        @media only screen and(max-width: 767px) {
+            padding: 2rem 1rem;
+        }
+
+        .btn,
+        .form-select {
+            padding: 1rem 0.75rem;
+        }
+
+        .form-floating > .form-control,
+        .form-floating > .form-control-plaintext {
+            border-radius: 0.2rem;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        textarea:focus,
+        textarea.form-control:focus,
+        input.form-control:focus,
+        select.form-select:focus,
+        input[type="password"]:focus,
+        input[type="email"]:focus,
+        input[type="checkbox"]:focus,
+        [type="password"].form-control:focus,
+        [type="email"].form-control:focus,
+        [contenteditable].form-control:focus {
+            box-shadow: none;
+            border: 2px solid black;
+        }
+
+    }
+}
