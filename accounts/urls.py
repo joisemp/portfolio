@@ -16,6 +16,6 @@ urlpatterns = [
     path('complete-password-reset/', views.CompletePasswordResetView.as_view(),
          name='complete-password-reset'),
     path('dashboard/projects/', views.DashboardProjectListView.as_view(), name='dashboard-project-list'),
-    path('dashboard/projects/update<int:pk>/', views.ProjectUpdateView.as_view(),
+    path('dashboard/projects/update/<int:pk>/', views.ProjectUpdateView.as_view(),
          name='project-update-page'),
 ]

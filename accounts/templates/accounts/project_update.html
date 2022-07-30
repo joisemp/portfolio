@@ -1,8 +1,238 @@
-<h1>Update project</h1>
-
-
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
-</form>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Update Project
+{% endblock title %}
+{% block navbar %}
+    {% include 'admin_nav.html' %}
+{% endblock navbar %}
+{% block stylesheet %}
+    <link rel="stylesheet"
+          href="{% static 'accounts/project-form/style.css' %}">
+{% endblock %}
+{% block content %}
+    {% include 'sub-nav.html' %}
+    <section id="project-form">
+        <div class="wrapper">
+            <h1 class="heading-md text-center mb-4">Edit Project</h1>
+            <div class="form-wrap">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <select name="project_type"
+                            class="form-select mb-3"
+                            aria-label="Default select example">
+                        <option {% if not object.project_type %}selected{% endif %}>
+                            Project Type
+                        </option>
+                        <option {% if object.project_type == "Programming" %}selected{% endif %}
+                                value="Programming">
+                            Programming
+                        </option>
+                        <option {% if object.project_type == "Design" %}selected{% endif %}
+                                value="Design">
+                            Design
+                        </option>
+                    </select>
+                    <div class="form-floating mb-3">
+                        <input type="text"
+                               name="title"
+                               value="{{ object.title }}"
+                               class="form-control"
+                               id="floatingInput"
+                               placeholder="Title">
+                        <label for="floatingInput">Title</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text"
+                               name="company"
+                               value="{{ object.company }}"
+                               class="form-control"
+                               id="floatingInput"
+                               placeholder="Company">
+                        <label for="floatingInput">Company</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text"
+                               name="year"
+                               value="{{ object.year }}"
+                               class="form-control"
+                               id="floatingInput"
+                               placeholder="Year">
+                        <label for="floatingInput">Year</label>
+                    </div>
+                    <select class="form-select mb-3"
+                            name="role"
+                            aria-label="Default select example">
+                        <option {% if not object.role %}selected{% endif %}>
+                            Role
+                        </option>
+                        <option {% if object.role == "Full Stack Developer" %}selected{% endif %}
+                                value="Full Stack Developer">
+                            Full Stack Developer
+                        </option>
+                        <option {% if object.role == "Web-Designer" %}selected{% endif %}
+                                value="Web-Designer">
+                            Web-Designer
+                        </option>
+                        <option {% if object.role == "Designer" %}selected{% endif %}
+                                value="Designer">
+                            Designer
+                        </option>
+                    </select>
+                    <figure class="figure mb-3">
+                        <img src="{{ object.image.url }}"
+                             class="figure-img img-fluid rounded"
+                             style="object-fit: cover;
+                                    max-width: 300px;">
+                        <figcaption class="figure-caption">
+                            <b>Current Image : </b>{{ object.image }}
+                        </figcaption>
+                    </figure>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text bg-dark text-light" for="inputGroupFile01">Image</label>
+                        <input type="file"
+                               name="image"
+                               accept="image/*"
+                               class="form-control py-3 ps-4"
+                               id="inputGroupFile01">
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" name="summary" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 300px">{{object.summary}}</textarea>
+                        <label for="floatingTextarea2">Summary</label>
+                    </div>
+                    <hr class="my-5">
+                    <div class="form-floating mb-3">
+                        <input type="text"
+                               class="form-control"
+                               value="{{ object.primary_button_text }}"
+                               id="floatingInput"
+                               placeholder="Primary button text"
+                               name="primary_button_text">
+                        <label for="floatingInput">Primary button text</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text"
+                               name="primary_link"
+                               class="form-control"
+                               id="floatingInput"
+                               placeholder="Primary link"
+                               value="{{ object.primary_link }}">
+                        <label for="floatingInput">Primary link</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text"
+                               class="form-control"
+                               id="floatingInput"
+                               placeholder="Secondary button text"
+                               name="secondary_button_text"
+                               value="{{ object.secondary_button_text }}">
+                        <label for="floatingInput">Secondary button text</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text"
+                               class="form-control"
+                               name="secondary_link"
+                               id="floatingInput"
+                               placeholder="Secondary link"
+                               value="{{ object.secondary_link }}">
+                        <label for="floatingInput">Secondary link</label>
+                    </div>
+                    <hr class="my-5">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Python</label>
+                        <select class="form-select" name="python" aria-label="Default select example">
+                            <option {% if object.python %}selected{% endif %} value="true">
+                                Yes
+                            </option>
+                            <option {% if not object.python %}selected{% endif %} value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Bootstrap</label>
+                        <select class="form-select"
+                                name="bootstrap"
+                                aria-label="Default select example">
+                            <option {% if object.bootstrap %}selected{% endif %} value="true">
+                                Yes
+                            </option>
+                            <option {% if not object.bootstrap %}selected{% endif %} value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Figma</label>
+                        <select class="form-select" name="figma" aria-label="Default select example">
+                            <option {% if object.figma %}selected{% endif %} value="true">
+                                Yes
+                            </option>
+                            <option {% if not object.figma %}selected{% endif %} value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Html</label>
+                        <select class="form-select" name="html" aria-label="Default select example">
+                            <option {% if object.html %}selected{% endif %} value="true">
+                                Yes
+                            </option>
+                            <option {% if not object.html %}selected{% endif %} value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Js</label>
+                        <select class="form-select" name="js" aria-label="Default select example">
+                            <option {% if object.js %}selected{% endif %} value="true">
+                                Yes
+                            </option>
+                            <option {% if not object.js %}selected{% endif %} value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">React</label>
+                        <select class="form-select" name="react" aria-label="Default select example">
+                            <option {% if object.react %}selected{% endif %} value="true">
+                                Yes
+                            </option>
+                            <option {% if not object.react %}selected{% endif %} value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Scss</label>
+                        <select class="form-select" name="scss" aria-label="Default select example">
+                            <option {% if object.scss %}selected{% endif %} value="true">
+                                Yes
+                            </option>
+                            <option {% if not object.scss %}selected{% endif %} value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Github</label>
+                        <select class="form-select" name="github" aria-label="Default select example">
+                            <option {% if object.github %}selected{% endif %} value="true">
+                                Yes
+                            </option>
+                            <option {% if not object.github %}selected{% endif %} value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="d-grid gap-2 mb-3">
+                        <button class="btn primary-btn submit-btn" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
