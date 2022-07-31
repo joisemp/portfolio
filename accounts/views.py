@@ -19,10 +19,10 @@ class LoginView(LoginRedirectMixin, views.LoginView):
         login(self.request, form.get_user())
         if remember_me:
             self.request.session.set_expiry(1209600)
-            
+
         message = "You have logged in successfully"
         messages.success(self.request, message)
-        
+
         return super(LoginView, self).form_valid(form)
 
     def get_success_url(self):
@@ -57,23 +57,36 @@ class ConfirmPasswordResetView(LoginRedirectMixin, views.PasswordResetConfirmVie
 
 class CompletePasswordResetView(LoginRedirectMixin, views.PasswordResetCompleteView):
     template_name = 'accounts/password_reset/password_reset_complete.html'
-    
-    
+
+
 class DashboardProjectListView(AdminAccessMixin, generic.ListView):
     template_name = 'accounts/dashboard-project-list.html'
     model = models.Project
     context_object_name = 'projects'
     queryset = models.Project.objects.order_by('-id')
-    
+
 
 class ProjectUpdateView(generic.UpdateView):
     model = models.Project
     form_class = ProjectForm
     template_name = 'accounts/project_update.html'
     success_url = reverse_lazy('accounts:dashboard-project-list')
-    
+
     def form_valid(self, form):
         message = "Model Updated Successfully"
         messages.success(self.request, message)
-        
+
         return super(ProjectUpdateView, self).form_valid(form)
+
+
+class ProjectCreateView(generic.CreateView):
+    model = models.Project
+    form_class = ProjectForm
+    template_name = 'accounts/project_create.html'
+    success_url = reverse_lazy('accounts:dashboard-project-list')
+
+    def form_valid(self, form):
+        message = "Project created Successfully"
+        messages.success(self.request, message)
+
+        return super(ProjectCreateView, self).form_valid(form)
