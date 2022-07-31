@@ -66,7 +66,7 @@ class DashboardProjectListView(AdminAccessMixin, generic.ListView):
     queryset = models.Project.objects.order_by('-id')
 
 
-class ProjectUpdateView(generic.UpdateView):
+class ProjectUpdateView(AdminAccessMixin, generic.UpdateView):
     model = models.Project
     form_class = ProjectForm
     template_name = 'accounts/project_update.html'
@@ -79,7 +79,7 @@ class ProjectUpdateView(generic.UpdateView):
         return super(ProjectUpdateView, self).form_valid(form)
 
 
-class ProjectCreateView(generic.CreateView):
+class ProjectCreateView(AdminAccessMixin, generic.CreateView):
     model = models.Project
     form_class = ProjectForm
     template_name = 'accounts/project_create.html'
