@@ -15,7 +15,12 @@ urlpatterns = [
          views.ConfirmPasswordResetView.as_view(), name='confirm-password-reset'),
     path('complete-password-reset/', views.CompletePasswordResetView.as_view(),
          name='complete-password-reset'),
-    path('dashboard/projects/', views.DashboardProjectListView.as_view(), name='dashboard-project-list'),
+    path('dashboard/projects/', views.DashboardProjectListView.as_view(),
+         name='dashboard-project-list'),
     path('dashboard/projects/update/<int:pk>/', views.ProjectUpdateView.as_view(),
          name='project-update-page'),
+    path('dashboard/projects/create/', views.ProjectCreateView.as_view(),
+         name='project-create-page'),
+    path('dashboard/projects/delete/<int:pk>/', views.ProjectDeleteView.as_view(),
+         name='project-delete-page'),
 ]

@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Create Project
+{% endblock title %}
+{% block navbar %}
+    {% include 'admin_nav.html' %}
+{% endblock navbar %}
+{% block stylesheet %}
+    <link rel="stylesheet"
+          href="{% static 'accounts/project-form/style.css' %}">
+{% endblock %}
+{% block content %}
+    {% include 'sub-nav.html' %}
+    <section id="project-form">
+        <div class="wrapper">
+            <h1 class="heading-md text-center mb-4">Create Project</h1>
+            <div class="form-wrap">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <select name="project_type"
+                            class="form-select mb-3"
+                            aria-label="Default select example">
+                        <option selected>
+                            Project Type
+                        </option>
+                        <option value="Programming">
+                            Programming
+                        </option>
+                        <option value="Design">
+                            Design
+                        </option>
+                    </select>
+                    <div class="form-floating mb-3">
+                        <input type="text"
+                               name="title"
+                               class="form-control"
+                               id="floatingInput"
+                               placeholder="Title">
+                        <label for="floatingInput">Title</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text"
+                               name="company"
+                               class="form-control"
+                               id="floatingInput"
+                               placeholder="Company">
+                        <label for="floatingInput">Company</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text"
+                               name="year"
+                               class="form-control"
+                               id="floatingInput"
+                               placeholder="Year">
+                        <label for="floatingInput">Year</label>
+                    </div>
+                    <select class="form-select mb-3"
+                            name="role"
+                            aria-label="Default select example">
+                        <option selected>
+                            Role
+                        </option>
+                        <option value="Full Stack Developer">
+                            Full Stack Developer
+                        </option>
+                        <option value="Web-Designer">
+                            Web-Designer
+                        </option>
+                        <option value="Designer">
+                            Designer
+                        </option>
+                    </select>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text bg-dark text-light" for="inputGroupFile01">Image</label>
+                        <input type="file"
+                               name="image"
+                               accept="image/*"
+                               class="form-control py-3 ps-4"
+                               id="inputGroupFile01">
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control"
+                                  name="summary"
+                                  placeholder="Leave a comment here"
+                                  id="floatingTextarea2"
+                                  style="height: 300px"></textarea>
+                        <label for="floatingTextarea2">Summary</label>
+                    </div>
+                    <hr class="my-5">
+                    <div class="form-floating mb-3">
+                        <input type="text"
+                               class="form-control"
+                               id="floatingInput"
+                               placeholder="Primary button text"
+                               name="primary_button_text">
+                        <label for="floatingInput">Primary button text</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text"
+                               name="primary_link"
+                               class="form-control"
+                               id="floatingInput"
+                               placeholder="Primary link">
+                        <label for="floatingInput">Primary link</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text"
+                               class="form-control"
+                               id="floatingInput"
+                               placeholder="Secondary button text"
+                               name="secondary_button_text">
+                        <label for="floatingInput">Secondary button text</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text"
+                               class="form-control"
+                               name="secondary_link"
+                               id="floatingInput"
+                               placeholder="Primary link">
+                        <label for="floatingInput">Secondary link</label>
+                    </div>
+                    <hr class="my-5">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Python</label>
+                        <select class="form-select" name="python" aria-label="Default select example">
+                            <option value="unknown" selected>
+                                Unknown
+                            </option>
+                            <option value="true">
+                                Yes
+                            </option>
+                            <option value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Bootstrap</label>
+                        <select class="form-select"
+                                name="bootstrap"
+                                aria-label="Default select example">
+                            <option value="unknown" selected>
+                                Unknown
+                            </option>
+                            <option value="true">
+                                Yes
+                            </option>
+                            <option value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Figma</label>
+                        <select class="form-select" name="figma" aria-label="Default select example">
+                            <option value="unknown" selected>
+                                Unknown
+                            </option>
+                            <option value="true">
+                                Yes
+                            </option>
+                            <option value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Html</label>
+                        <select class="form-select" name="html" aria-label="Default select example">
+                            <option value="unknown" selected>
+                                Unknown
+                            </option>
+                            <option value="true">
+                                Yes
+                            </option>
+                            <option value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Js</label>
+                        <select class="form-select" name="js" aria-label="Default select example">
+                            <option value="unknown" selected>
+                                Unknown
+                            </option>
+                            <option value="true">
+                                Yes
+                            </option>
+                            <option value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">React</label>
+                        <select class="form-select" name="react" aria-label="Default select example">
+                            <option value="unknown" selected>
+                                Unknown
+                            </option>
+                            <option value="true">
+                                Yes
+                            </option>
+                            <option value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Scss</label>
+                        <select class="form-select" name="scss" aria-label="Default select example">
+                            <option value="unknown" selected>
+                                Unknown
+                            </option>
+                            <option value="true">
+                                Yes
+                            </option>
+                            <option value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Github</label>
+                        <select class="form-select" name="github" aria-label="Default select example">
+                            <option value="unknown" selected>
+                                Unknown
+                            </option>
+                            <option value="true">
+                                Yes
+                            </option>
+                            <option value="false">
+                                No
+                            </option>
+                        </select>
+                    </div>
+                    <div class="d-grid gap-2 mb-3">
+                        <button class="btn primary-btn submit-btn" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
