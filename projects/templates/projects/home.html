@@ -51,30 +51,36 @@
     </section>
     <section class="ps-2 pe-2" id="projects">
         <h1 class="heading-md mb-4">Projects</h1>
-        {% for project in projects %}
-            <a href="{% url 'projects:project-detail-page' project.pk %}"
-               class="card mb-3">
-                <div class="wrapper">
-                    <div>
-                        {% if project.project_type == 'Design' %}
-                            <i class="fa-solid fa-bezier-curve icon"></i>
-                        {% elif project.project_type == 'Programming' %}
-                            <i class="fa-solid fa-code icon"></i>
-                        {% endif %}
+        {% if projects %}
+            {% for project in projects %}
+                <a href="{% url 'projects:project-detail-page' project.pk %}"
+                   class="card mb-3">
+                    <div class="wrapper">
+                        <div>
+                            {% if project.project_type == 'Design' %}
+                                <i class="fa-solid fa-bezier-curve icon"></i>
+                            {% elif project.project_type == 'Programming' %}
+                                <i class="fa-solid fa-code icon"></i>
+                            {% endif %}
+                        </div>
+                        <div class="mt-5">
+                            <p class="card-title">{{ project.title }}</p>
+                            <p class="text">
+                                <b>Role</b>: {{ project.role }}
+                            </p>
+                            <p class="text">{{ project.summary | truncatechars:150 }}</p>
+                            <p class="learn-more">
+                                Learn more<i class="fa-solid fa-arrow-right ps-2 pt-2"></i>
+                            </p>
+                        </div>
                     </div>
-                    <div class="mt-5">
-                        <p class="card-title">{{ project.title }}</p>
-                        <p class="text">
-                            <b>Role</b>: {{ project.role }}
-                        </p>
-                        <p class="text">{{ project.summary | truncatechars:150 }}</p>
-                        <p class="learn-more">
-                            Learn more<i class="fa-solid fa-arrow-right ps-2 pt-2"></i>
-                        </p>
-                    </div>
-                </div>
-            </a>
-        {% endfor %}
+                </a>
+            {% endfor %}
+        {% else %}
+            <div class="mb-5">
+                <h6>No project exist. Create one to display here.</h6>
+            </div>
+        {% endif %}
         {% if projects.count >= 3 %}
             <div class="mb-5">
                 <a href="{{ projectListPage }}" class="btn primary-btn">View all<i class="fa-solid fa-arrow-right ps-3 pt-2"></i></a>

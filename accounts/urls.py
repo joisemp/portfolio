@@ -21,4 +21,6 @@ urlpatterns = [
          name='project-update-page'),
     path('dashboard/projects/create/', views.ProjectCreateView.as_view(),
          name='project-create-page'),
+    path('dashboard/projects/delete/<int:pk>/', views.ProjectDeleteView.as_view(),
+         name='project-delete-page'),
 ]

@@ -75,7 +75,6 @@ class ProjectUpdateView(AdminAccessMixin, generic.UpdateView):
     def form_valid(self, form):
         message = "Model Updated Successfully"
         messages.success(self.request, message)
-
         return super(ProjectUpdateView, self).form_valid(form)
 
 
@@ -88,5 +87,15 @@ class ProjectCreateView(AdminAccessMixin, generic.CreateView):
     def form_valid(self, form):
         message = "Project created Successfully"
         messages.success(self.request, message)
-
         return super(ProjectCreateView, self).form_valid(form)
+
+
+class ProjectDeleteView(AdminAccessMixin, generic.DeleteView):
+    model = models.Project
+    template_name = 'accounts/project_delete.html'
+    success_url = reverse_lazy('accounts:dashboard-project-list')
+
+    def delete(self, request, *args, **kwargs):
+        message = "Project deleted Successfully"
+        messages.success(self.request, message)
+        return super(ProjectDeleteView, self).delete(request, *args, **kwargs)
