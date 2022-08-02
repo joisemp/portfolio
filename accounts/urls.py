@@ -23,4 +23,6 @@ urlpatterns = [
          name='project-create-page'),
     path('dashboard/projects/delete/<int:pk>/', views.ProjectDeleteView.as_view(),
          name='project-delete-page'),
+    path('dashboard/contact-list/', views.ContactListView.as_view(),
+         name='contact-list-page'),
 ]

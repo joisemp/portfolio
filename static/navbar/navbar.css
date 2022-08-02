@@ -6,9 +6,25 @@
   border: none !important;
   color: black !important;
 }
+.navbar-expand-md .dropdown-menu {
+  border-radius: 3px;
+  padding: 1rem 0.7rem;
+}
+.navbar-expand-md .dropdown-menu a {
+  padding: 0.5rem 0;
+}
+@media only screen and (max-width: 767px) {
+  .navbar-expand-md .dropdown-menu a {
+    padding: 1rem 0;
+    text-align: center;
+  }
+}
+.navbar-expand-md .dropdown-menu a:hover {
+  border: none !important;
+}
 @media only screen and (min-width: 768px) {
   .navbar-expand-md .navbar-nav {
-    padding-top: 1.2rem;
+    padding: 0.5rem 0;
   }
 }
 .navbar-expand-md .navbar-nav .nav-item .active {
@@ -17,6 +33,9 @@
 @media only screen and (min-width: 768px) {
   .navbar-expand-md .navbar-nav .nav-item .active:hover {
     color: rgb(0, 0, 0);
+  }
+  .navbar-expand-md .navbar-nav .nav-item a {
+    border: 2px solid rgba(0, 0, 0, 0);
   }
   .navbar-expand-md .navbar-nav .nav-item a:hover {
     font-weight: 600;
