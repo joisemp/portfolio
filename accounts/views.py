@@ -99,3 +99,10 @@ class ProjectDeleteView(AdminAccessMixin, generic.DeleteView):
         message = "Project deleted Successfully"
         messages.success(self.request, message)
         return super(ProjectDeleteView, self).delete(request, *args, **kwargs)
+
+
+class ContactListView(AdminAccessMixin, generic.ListView):
+    template_name = 'accounts/dashboard-contact-list.html'
+    model = models.Contact
+    context_object_name = 'contacts'
+    queryset = models.Contact.objects.order_by('-id')

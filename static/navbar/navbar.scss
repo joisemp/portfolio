@@ -1,13 +1,28 @@
 .navbar-expand-md {
+    background-color: #f9fafb;
+    border-bottom: 2px solid rgb(0, 0, 0);
     .navbar-toggler {
         border: none !important;
         color: black !important;
     }
-    background-color: #f9fafb;
-    border-bottom: 2px solid rgb(0, 0, 0);
+    .dropdown-menu {
+        border-radius: 3px;
+        padding: 1rem 0.7rem;
+
+        a {
+            padding: 0.5rem 0;
+            @media only screen and (max-width: 767px) {
+                padding: 1rem 0;
+                text-align: center;
+            }
+            &:hover {
+                border: none !important;
+            }
+        }
+    }
     .navbar-nav {
         @media only screen and (min-width: 768px) {
-            padding-top: 1.2rem;
+            padding: 0.5rem 0;
         }
         .nav-item {
             .active {
@@ -16,6 +31,9 @@
             @media only screen and (min-width: 768px) {
                 .active:hover {
                     color: rgb(0, 0, 0);
+                }
+                a {
+                    border: 2px solid rgba(0, 0, 0, 0);
                 }
                 a:hover {
                     font-weight: 600;
