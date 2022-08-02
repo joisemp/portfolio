@@ -106,3 +106,13 @@ class ContactListView(AdminAccessMixin, generic.ListView):
     model = models.Contact
     context_object_name = 'contacts'
     queryset = models.Contact.objects.order_by('-id')
+
+
+class ProjectSerchView(generic.ListView):
+    model = models.Project
+    template_name = 'accounts/dashboard-project-list.html'
+    context_object_name = 'projects'
+
+    def get_queryset(self):
+        query = self.request.GET.get('search_item')
+        return models.Project.objects.filter(title__icontains=query).order_by('-id')
