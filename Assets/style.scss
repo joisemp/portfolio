@@ -4,6 +4,14 @@ $title-font: 'Fredericka the Great', serif;
 $brand-font: 'Homemade Apple';
 $display-font: 'Henny Penny';
 
+body{
+    background-color: #000000 !important;
+    .title{
+        font-family: $title-font;
+        color: #ffff !important;
+    }
+}
+
 header{
     .navbar{
         background-color: #000000 !important;
@@ -23,16 +31,42 @@ header{
             padding: 0.5rem 1rem;
             font-weight: 500;
             border-radius: 50px;
-            border: 1px solid #ffffff;
         }
     }
 }
 
-section{
-    background-color: #000000;
-    min-height: 100vh;
-    h1, h2{
-        font-family: $title-font;
-        color: #ffff !important;
+
+#hero{
+    padding: 2rem 0;
+    .available{
+        color: #adff2f;
+        font-size: 12px;
+        font-weight: 400;
+        background-color: #acff2f34;
+        border-radius: 50px;
+        padding: 0.5rem 1rem;
+        width: fit-content;
+        margin-bottom: 2rem;
+    }
+    h2{
+        font-size: 56px !important;
+        margin-bottom: 1rem;
+    }
+    .sub-text{
+        color: #ffffff91;
+        font-size: 16px;
+        margin-bottom: 1rem;
+    }
+    .container-fluid{
+        max-width: 700px;
+        .resume-btn{
+            background-color: #ffff;
+            color: #000000;
+            font-weight: 600;
+            padding: 0.5rem 2rem;
+            text-transform: uppercase;
+            font-size: 14px;
+            border-radius: 50px;
+        }
     }
 }
