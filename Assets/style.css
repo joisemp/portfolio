@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Henny+Penny&family=Homemade+Apple&display=swap");
+header .navbar {
+  background-color: #000000 !important;
+  padding: 2rem 0;
+}
+header .navbar .container {
+  max-width: 1280px;
+}
+header .navbar .navbar-brand {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Homemade Apple";
+}
+header .navbar .contact-btn {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 50px;
+  border: 1px solid #ffffff;
+}
+
+section {
+  background-color: #000000;
+  min-height: 100vh;
+}
+section h1, section h2 {
+  font-family: "Fredericka the Great", serif;
+  color: white !important;
+}/*# sourceMappingURL=style.css.map */
