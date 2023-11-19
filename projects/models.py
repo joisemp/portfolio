@@ -65,6 +65,6 @@ class Contact(models.Model):
 
 
 @receiver(pre_delete, sender=Project)
-def Carousel_delete(sender, instance, **kwargs):
+def image_delete(sender, instance, **kwargs):
     # Pass false so FileField doesn't save the model.
     instance.image.delete(False)
