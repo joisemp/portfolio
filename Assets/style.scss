@@ -31,6 +31,10 @@ header{
             padding: 0.5rem 1rem;
             font-weight: 500;
             border-radius: 50px;
+            .copy-icon{
+                width: 18px;
+                margin-right: 1rem;
+            }
         }
     }
 }
@@ -62,7 +66,7 @@ header{
         .resume-btn{
             background-color: #ffff;
             color: #000000;
-            font-weight: 600;
+            font-weight: 500;
             padding: 0.5rem 2rem;
             text-transform: uppercase;
             font-size: 14px;

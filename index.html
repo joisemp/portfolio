@@ -13,26 +13,9 @@
             <div class="container">
               <span class="navbar-brand mb-0 h1">Joise mp</span>
               <!-- Button trigger modal -->
-                <button type="button" class="btn btn-sm contact-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Contact Me
+                <button type="button" id="copyButton" onclick="copyEmail()" class="btn btn-sm contact-btn">
+                    <img src="./Assets/copy-regular.svg" class="copy-icon" id="copyIcon" alt=""><span class="d-md-inline d-md-none">Copy Email</span><span class="d-none d-md-inline">joise1124@gmail.com</span>
                 </button>
-  
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Get in touch</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                            <p><b>Email : </b>contactjoise@gmail.com</p>
-                            <p><b>Linkedin : </b>@joise_mp</p>
-                            <p><b>Instagram : </b>@joisemp</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
           </nav>
     </header>
@@ -49,5 +32,6 @@
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="./Assets/script.js"></script>
   </body>
 </html>
