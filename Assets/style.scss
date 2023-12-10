@@ -31,9 +31,17 @@ header{
             padding: 0.5rem 1rem;
             font-weight: 500;
             border-radius: 50px;
+            @media screen and (min-width: 900px){
+                font-size: 18px;
+                padding: 1rem 2rem;
+            }
             .copy-icon{
                 width: 18px;
-                margin-right: 1rem;
+                margin: -4px 1rem 0 0;
+                @media screen and (min-width: 900px){
+                    margin: -4px 1rem 0 0;
+                    width: 22px;
+                }
             }
         }
     }
@@ -41,7 +49,8 @@ header{
 
 
 #hero{
-    padding: 2rem 0;
+    padding: 3rem 0;
+    text-align: center;
     .available{
         color: #adff2f;
         font-size: 12px;
@@ -55,22 +64,33 @@ header{
     h2{
         font-size: 56px !important;
         margin-bottom: 1rem;
+        @media screen and (min-width: 900px){
+            font-size: 70px !important;
+            margin-bottom: 2rem;
+        }
     }
     .sub-text{
         color: #ffffff91;
         font-size: 16px;
         margin-bottom: 1rem;
-    }
-    .container-fluid{
         max-width: 700px;
-        .resume-btn{
-            background-color: #ffff;
-            color: #000000;
-            font-weight: 500;
-            padding: 0.5rem 2rem;
-            text-transform: uppercase;
-            font-size: 14px;
-            border-radius: 50px;
+        @media screen and (min-width: 900px){
+            margin-bottom: 1.5rem;
+            font-size: 18px;
+        }
+    }
+}
+
+#projects{
+    padding: 3rem 0;
+    .card{
+        background-color: transparent;
+        .card-img-top{
+            object-fit: cover;
+            border-radius: 0.2rem;
+        }
+        .card-body{
+            display: inline;
         }
     }
 }

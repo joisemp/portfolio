@@ -27,13 +27,26 @@ header .navbar .contact-btn {
   font-weight: 500;
   border-radius: 50px;
 }
+@media screen and (min-width: 900px) {
+  header .navbar .contact-btn {
+    font-size: 18px;
+    padding: 1rem 2rem;
+  }
+}
 header .navbar .contact-btn .copy-icon {
   width: 18px;
-  margin-right: 1rem;
+  margin: -4px 1rem 0 0;
+}
+@media screen and (min-width: 900px) {
+  header .navbar .contact-btn .copy-icon {
+    margin: -4px 1rem 0 0;
+    width: 22px;
+  }
 }
 
 #hero {
-  padding: 2rem 0;
+  padding: 3rem 0;
+  text-align: center;
 }
 #hero .available {
   color: #adff2f;
@@ -50,20 +63,36 @@ header .navbar .contact-btn .copy-icon {
   font-size: 56px !important;
   margin-bottom: 1rem;
 }
+@media screen and (min-width: 900px) {
+  #hero h2 {
+    font-size: 70px !important;
+    margin-bottom: 2rem;
+  }
+}
 #hero .sub-text {
   color: rgba(255, 255, 255, 0.568627451);
   font-size: 16px;
   margin-bottom: 1rem;
-}
-#hero .container-fluid {
   max-width: 700px;
 }
-#hero .container-fluid .resume-btn {
-  background-color: white;
-  color: #000000;
-  font-weight: 500;
-  padding: 0.5rem 2rem;
-  text-transform: uppercase;
-  font-size: 14px;
-  border-radius: 50px;
+@media screen and (min-width: 900px) {
+  #hero .sub-text {
+    margin-bottom: 1.5rem;
+    font-size: 18px;
+  }
+}
+
+#projects {
+  padding: 3rem 0;
+}
+#projects .card {
+  background-color: transparent;
+}
+#projects .card .card-img-top {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.2rem;
+}
+#projects .card .card-body {
+  display: inline;
 }/*# sourceMappingURL=style.css.map */
