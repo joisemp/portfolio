@@ -90,10 +90,34 @@ header{
         background-color: transparent;
         .card-img-top{
             object-fit: cover;
-            border-radius: 0.2rem;
+            border-radius: 1rem;
         }
         .card-body{
-            display: inline;
+            display: flex;
+            align-items: center;
+            .text-group{
+                .card-title{
+                    font-size: 25px;
+                    font-weight: 600;
+                    color: #ffff;
+                }
+                .card-text{
+                    font-size: 16px;
+                    color: #ffffffec;
+                    @media screen and (min-width: 900px){
+                        font-size: 18px;
+                    }
+                }
+            }
+            .button-group{
+                margin-left: auto;
+                .btn{
+                    padding: 0.5rem 1.5rem;
+                    border-radius: 2rem;
+                    background-color: #2b2b2b;
+                    border: none;
+                }
+            }
         }
     }
 }
