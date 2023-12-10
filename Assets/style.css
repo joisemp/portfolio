@@ -45,8 +45,13 @@ header .navbar .contact-btn .copy-icon {
 }
 
 #hero {
-  padding: 3rem 0;
+  padding: 3rem 0 2rem 0;
   text-align: center;
+}
+@media screen and (min-width: 900px) {
+  #hero {
+    padding: 4rem 0;
+  }
 }
 #hero .available {
   color: #adff2f;
@@ -83,7 +88,7 @@ header .navbar .contact-btn .copy-icon {
 }
 
 #projects {
-  padding: 3rem 0;
+  padding: 3rem 0 2rem 0;
 }
 #projects .card {
   background-color: transparent;

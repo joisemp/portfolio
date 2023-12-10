@@ -49,7 +49,10 @@ header{
 
 
 #hero{
-    padding: 3rem 0;
+    @media screen and (min-width: 900px){
+        padding: 4rem 0;
+    }
+    padding: 3rem 0 2rem 0;
     text-align: center;
     .available{
         color: #adff2f;
@@ -82,7 +85,7 @@ header{
 }
 
 #projects{
-    padding: 3rem 0;
+    padding: 3rem 0 2rem 0;
     .card{
         background-color: transparent;
         .card-img-top{
