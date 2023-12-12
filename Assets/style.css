@@ -34,14 +34,16 @@ header .navbar .contact-btn {
   }
 }
 header .navbar .contact-btn .copy-icon {
-  width: 18px;
-  margin: -4px 1rem 0 0;
+  font-size: 18px;
 }
 @media screen and (min-width: 900px) {
   header .navbar .contact-btn .copy-icon {
-    margin: -4px 1rem 0 0;
-    width: 22px;
+    font-size: 24px;
   }
+}
+header .navbar .contact-btn:hover {
+  background-color: white;
+  color: #000000;
 }
 
 #hero {
@@ -124,4 +126,9 @@ header .navbar .contact-btn .copy-icon {
   border-radius: 2rem;
   background-color: #2b2b2b;
   border: none;
+  font-size: 18px;
+}
+#projects .card .card-body .button-group .btn:hover {
+  color: #000000;
+  background-color: white;
 }/*# sourceMappingURL=style.css.map */

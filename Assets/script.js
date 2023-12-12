@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
         copyButton.innerText = 'Email copied!';
         setTimeout(() => {
           if (windowWidth > 900) {
-            copyButton.innerHTML = '<img src="./Assets/copy-regular.svg" class="copy-icon" id="copyIcon" alt="">' + emailAddress;
+            copyButton.innerHTML = '<i class="fa-regular fa-copy copy-icon pe-md-3 pe-2"></i>' + emailAddress;
           } else {
-            copyButton.innerHTML = '<img src="./Assets/copy-regular.svg" class="copy-icon" id="copyIcon" alt="">Copy Email';
+            copyButton.innerHTML = '<i class="fa-regular fa-copy copy-icon pe-md-3 pe-2"></i>Copy Email';
           }
           copyIcon.style.display = 'inline';
         }, 2000);
